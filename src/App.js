@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import 'antd/dist/antd.css';
+import { Button } from 'antd';
 
 class App extends Component {
   render() {
@@ -17,8 +19,10 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            Three Pig 
+            三只小猪工作室
           </a>
+          <Button>了解更多</Button>
         </header>
       </div>
     );
