@@ -1,0 +1,41 @@
+.footerInfo {
+  height: 100%;
+  background: #052565;
+  font: 16px Microsoft Yahei;
+  color: #FFFFFF;
+}
+
+.footerInfo span {
+  height:18px;
+  font-size:12px;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color: #FFFFFF;
+  line-height: 53px;
+}
+
+
+.footerList{
+  padding-top: 30px;
+  text-align: left;
+  background: #FFFFFF;
+}
+
+.footerList #businessTitle{
+  font-size:34px;
+  color: #05256B;
+}
+
+.footerList #aList a{
+  color: #464646;
+  font-size:16px;
+}
+
+.footerList #aList .listCol{
+  height: 30px;
+  margin-top: 10px;
+}
+
+.footerList #aList a:hover {
+  color:blue;
+}

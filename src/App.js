@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.scss';
 import 'antd/dist/antd.css';
 import {Header, Bellows} from './Andeputai';
+import Footer from "./Andeputai/Footer/Footer";
     
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Bellows />
+        <Footer/>
       </div>
     );
   }
