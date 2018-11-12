@@ -1,41 +1,58 @@
-.footerInfo {
-  height: 100%;
-  background: #052565;
-  font: 16px Microsoft Yahei;
+#footer{
+  background-color: #FFFFFF;
+  font-size: 16px;
   color: #FFFFFF;
+}
+
+.footerInfo {
+  width: 60%;
+  margin: auto;
+  text-align: justify;
 }
 
 .footerInfo span {
   height:18px;
-  font-size:12px;
-  font-family:SourceHanSansCN-Regular;
-  font-weight:400;
-  color: #FFFFFF;
   line-height: 53px;
+  font-size: 12px;
+}
+
+.footerDiv{
+  background: #052565;
+  width: 100%;
+  margin-top: 50px;
 }
 
 
-.footerList{
-  padding-top: 30px;
-  text-align: left;
-  background: #FFFFFF;
+#footerList{
+  width: 60%;
+/*  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  justify-content: space-around;*/
+  margin: auto;
 }
 
-.footerList #businessTitle{
+
+#footerList #businessTitle{
   font-size:34px;
   color: #05256B;
+  text-align: left;
+  width: 100%;
+  padding-top: 50px;
 }
 
-.footerList #aList a{
+
+#footerList #aList a{
   color: #464646;
-  font-size:16px;
+  width: 250px;
 }
 
-.footerList #aList .listCol{
+#footerList #aList .listCol{
   height: 30px;
   margin-top: 10px;
+  text-align: justify;
 }
 
-.footerList #aList a:hover {
+#footerList #aList a:hover {
   color:blue;
 }

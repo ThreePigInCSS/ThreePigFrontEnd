@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Layout ,Row, Col} from 'antd';
+import { Row, Col} from 'antd';
 import './footer.scss';
 
 /**
  * Created by qixiangyu on 2018/11/11.
  */
 
-const {  Footer : aFooter} = Layout;
 class Footer extends Component{
     constructor(props) {
         super(props);
@@ -91,19 +90,22 @@ class Footer extends Component{
 
     createBusinessInfo() {
         return(
-            <div className="footerList">
+            <div id="footerList">
                 <h1 id="businessTitle">合作伙伴</h1>
-                <Row
-                    id = "aList">
+                <Row id = "aList"  >
                     {
                         this.businessInfo.map(item => (
-                            <Col className="listCol" xs={{ span:24 }} sm={{ span:12  }} lg = {{ span:8 }}>
+                            <Col className="listCol"
+                                 xs={{ span:24 }} md={{ span:12  }} lg = {{ span:8 }}
+                            >
                                 <a href={item.href}>{item.title}</a>
                             </Col>
                         ))
                     }
 
                 </Row>
+
+
             </div>
         );
     }
@@ -115,20 +117,22 @@ class Footer extends Component{
         let companyEng = "Beijing UnderProved medical technology co. LTD ";
         let netInfo = "京网备";
         return(
-            <aFooter>
+            <div id="footer">
                 {this.createBusinessInfo()}
-                <Row className="footerInfo">
-                    <Col  sm={{ span:24  }} lg = {{ span:8 }}>
-                        <span >{company}</span>
-                    </Col>
-                    <Col  sm={{ span:24}} lg = {{ span:8 }} >
-                        <span >{companyEng}</span>
-                    </Col>
-                    <Col  sm={{ span:24}} lg = {{ span:8 }} >
-                        <span >{netInfo}</span>
-                    </Col>
-                </Row>
-            </aFooter>
+                <div className="footerDiv">
+                    <Row className="footerInfo" >
+                        <Col sm={{span: 24}} lg={{span: 8}}>
+                            <span >{company}</span>
+                        </Col>
+                        <Col sm={{span: 24}} lg={{span: 8}}>
+                            <span >{companyEng}</span>
+                        </Col>
+                        <Col sm={{span: 24}} lg={{span: 8}}>
+                            <span >{netInfo}</span>
+                        </Col>
+                    </Row>
+                </div>
+            </div>
         )
     }
 }
