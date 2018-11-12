@@ -1,43 +1,101 @@
+$hover-bg-color: #132b61;
+$active-bg-color: #0c2968;
+$btn-bg-color: #00b7ee;
+
 .bellows {
   display: flex;
   flex-flow: row wrap;
+  position: relative;
 
-  .piece {
-    position: relative;
-    width: 20%;
+  .active-piece-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
     img {
       width: 100%;
-      height: 500px;
+      height: 100%;
+    }
+  }
+
+  .piece-hide {
+    display: none;
+  }
+
+  .piece {
+    position: relative;
+
+    img {
+      width: 100%;
     }
 
     .piece-top-layer {
+      &:hover {
+        background: $hover-bg-color;
+      }
+
       position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
+      z-index: 2;
       background: #373737;
       opacity: 0.8;
       color: white;
+    }
 
-      p:first-of-type {
-        margin-top: 100%; 
+    .layer-active {
+      background: $active-bg-color;
+    }
+
+    .ant-btn {
+      position: absolute;
+      color: white;
+      border-color: none;
+      background-color: $btn-bg-color;
+      top: 14%;
+      left: 14%;
+    }
+
+    .piece-content {
+      padding: 50px;
+      background-color: white;
+    
+      .title {
+        color: $active-bg-color;
+        margin-bottom: 0; 
+        font-size: .875rem;
+        text-align: left;
+        line-height: 1rem;
+        font-weight: bold;
+      }
+
+      hr {
+        box-sizing: unset;
+        border: none;
+        overflow: hidden;
+        height: 1px;
+        border-bottom: 1px solid;
+        border-color: #6d6d6d;
+        transform: scaleY(0.5);
+        transform-origin: 0 0;
       }
     }
   }
 }
 
-@media screen and (min-width: 600px) {
+.piece {
+  width: 20%;
+}
+
+@media only screen and (max-width: 800px) {
   .piece {
     width: 100%;
   }
 }
-
-// @media (min-width: 800px) {
-//   .bellows {
-//     width: 800px;
-//     margin-left: auto;
-//     margin-right: auto;
-//   }
-// }
