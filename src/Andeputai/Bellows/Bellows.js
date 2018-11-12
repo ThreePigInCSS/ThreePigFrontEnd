@@ -15,8 +15,8 @@ import bb05 from '../static/bellows-05-big.jpg';
 
 const { Content } = Layout;
 
-const learnMore = '了解更多',
-  isMob = detectmob();
+let learnMore = '了解更多',
+  isMob = false;
 
 class Bellows extends Component {
   constructor(props) {
@@ -84,10 +84,6 @@ class Bellows extends Component {
       ev.stopPropagation();
     }
 
-    let activeMenu = this.menuList.filter((menu => menu.active)),
-      hasActive = Boolean(activeMenu.length);
-
-
     function showBigImg(menu) {
       return (
         <div className="active-piece-bg">
@@ -152,6 +148,10 @@ class Bellows extends Component {
       );
     }
 
+    let activeMenu = this.menuList.filter((menu => menu.active)),
+      hasActive = Boolean(activeMenu.length);
+
+    isMob = detectmob();
     return (
       <div className="bellows">
         {

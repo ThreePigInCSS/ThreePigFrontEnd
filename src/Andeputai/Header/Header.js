@@ -36,7 +36,7 @@ class Header extends Component {
     return(
       <Menu
         theme="dark"
-        mode="horizontal"
+        mode="inline"
         style={{ lineHeight: '64px' }}
       >
         {
@@ -54,12 +54,12 @@ class Header extends Component {
 
   render() {
     return (
-      <AHeader>
+      <div>
         <div className="logo" />
 
         {this.createHeader()}
 
-      </AHeader>
+      </div>
       
     );
   }
