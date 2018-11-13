@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Layout, Menu, Icon } from 'antd';
+import { Menu, Icon } from 'antd';
 import { detectmob } from '../../utils/utils.js'
 import './header.scss';
 
-const {Header: AHeader} = Layout;
 
 class Header extends Component {
   constructor(props) {
