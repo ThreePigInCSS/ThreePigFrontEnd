@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
-import { Row, Col} from 'antd';
+import React, { PureComponent } from 'react';
 import './footer.scss';
 
 /**
  * Created by qixiangyu on 2018/11/11.
  */
 
-class Footer extends Component{
+export default class Footer extends PureComponent{
     constructor(props) {
         super(props);
 
@@ -97,7 +96,7 @@ class Footer extends Component{
     }
 
     render(){
-        let company = "北京安德普泰医疗科技有限公司&copy;";
+        let company = "北京安德普泰医疗科技有限公司";
         let companyEng = "Beijing UnderProved medical technology co. LTD ";
         let netInfo = "京网备";
         return(
@@ -108,8 +107,8 @@ class Footer extends Component{
                         this.businessInfo.map((item, index) => (
                             <div className="footer_item" key={index}>
                                 {
-                                    item.map( link => (
-                                        <a href={link.href} target="_blank">{link.title}</a>
+                                    item.map( (link, linkIndex) => (
+                                        <a key={linkIndex} href={link.href} target="_blank">{link.title}</a>
                                     ))
                                 }
                             </div>
@@ -118,7 +117,7 @@ class Footer extends Component{
                 </div>
                 <div className="footer_info_content">
                     <div className="footer_info">
-                        <span>{company}</span>
+                        <span>{company}&nbsp;&copy;</span>
                         <span>{companyEng} <span className="net_info">{netInfo}</span></span>
 
                     </div>
@@ -127,6 +126,3 @@ class Footer extends Component{
         )
     }
 }
-
-
-export default Footer;

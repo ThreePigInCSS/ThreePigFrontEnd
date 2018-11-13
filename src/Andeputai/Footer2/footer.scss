@@ -45,3 +45,43 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .footer_container {
+    .footer_title {
+      margin-top: 4.8125rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    .footer {
+      display: block;
+      .footer_item {
+        text-align: center;
+        width: auto;
+        a {
+          margin-bottom: 0.9rem;
+          font-size: 0.75rem;
+          &:hover {
+            color: inherit;
+          }
+        }
+      }
+    }
+    .footer_info_content {
+      .footer_info {
+        height: 4.6875rem;
+        font-size: 0.625rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        span {
+          display: block;
+          &.net_info {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
