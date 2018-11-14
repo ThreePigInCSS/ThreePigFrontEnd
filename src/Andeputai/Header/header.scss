@@ -2,6 +2,10 @@ $menu-bg-color: #202020;
 $header-height: 3.125rem;
 $header-font-color: #EDEDED;
 
+
+body {
+  padding-top: $header-height;
+}
 .logo {
   width: 9rem;
   height: 2.125rem;
@@ -75,6 +79,7 @@ $header-font-color: #EDEDED;
 
 .pc-home {
   position: fixed;
+  top: 0;
   width: 100%;
   height: $header-height;
   z-index: 999;
