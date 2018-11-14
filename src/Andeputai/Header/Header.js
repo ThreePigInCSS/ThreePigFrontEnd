@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Menu, Icon } from 'antd';
 import { detectmob } from '../../utils/utils.js'
 import './header.scss';
+import logo from '../static/logo.png';
 
 
 class Header extends Component {
@@ -16,43 +17,53 @@ class Header extends Component {
     this.navList = [
       {
         name: 'Home',
-        anchor: '#',
+        anchor: '#home',
+        zName: '首页',
       },
       {
         name: 'About us',
         anchor: '#',
+        zName: '了解我们',
       },
       {
         name: 'Business',
-        anchor: '#',
+        anchor: '#business',
+        zName: '业务',
       },
       {
         name: 'Cooperation',
-        anchor: '#',
+        anchor: '#cooperation',
+        zName: '合作',
       },
       {
         name: 'Dynamic',
         anchor: '#',
+        zName: '企业动态',
       },
     ];
   }
 
   createPCHeader() {
     return(
-      <div>
-        <div className="logo" />
+      <div id="home" className="pc-home">
+        <div className="logo">
+          <a href="#home">
+            <img src={logo} alt="img"/>
+          </a>
+        </div>
 
         <Menu
           theme="dark"
           mode="horizontal"
-          style={{ lineHeight: '64px' }}
+          style={{ lineHeight: '50px', fontSize: '1rem' }}
         >
           {
             this.navList.map(nav => (
-              <Menu.Item key={nav.name}>
-                <a href={nav.anchor}>
-                  {nav.name}
-                </a>
+              <Menu.Item key={nav.name} className="involved-share">
+                <div className="text-container">
+                  <a className="hover" href={nav.anchor}>{nav.name}</a>
+                  <a className="hover-other" href={nav.anchor}>{nav.zName}</a>
+                </div>
               </Menu.Item>
             ))
           }
@@ -70,13 +81,12 @@ class Header extends Component {
       });
     };
 
-
-
-
     return (
-      <div className="menu">
+      <div className="menu" id="home">
         <div className="menu-title">
-          <div className="logo" />
+          <a href="#home">
+            <img src={logo} alt="img" />
+          </a>
 
           <div className="menu-btn" onClick={toggleCollapsed}>
             <Icon type={collapsed ? 'menu-unfold' : 'menu-fold'} />
@@ -89,7 +99,7 @@ class Header extends Component {
           <Menu
             theme="dark"
             mode="inline"
-            style={{ lineHeight: '64px' }}
+            style={{ lineHeight: '34px' }}
           >
             {
               this.navList.map(nav => (

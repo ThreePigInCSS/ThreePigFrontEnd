@@ -100,7 +100,7 @@ export default class Footer extends PureComponent{
         let companyEng = "Beijing UnderProved medical technology co. LTD ";
         let netInfo = "京网备";
         return(
-            <div className="footer_container">
+            <div className="footer_container" id="cooperation">
                 <div className="footer_title">合作伙伴</div>
                 <div className="footer">
                     {

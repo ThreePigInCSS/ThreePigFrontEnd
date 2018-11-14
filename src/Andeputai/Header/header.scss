@@ -1,17 +1,24 @@
-$menu-bg-color: #01050e;
+$menu-bg-color: #202020;
+$header-height: 3.125rem;
+$header-font-color: #EDEDED;
 
 .logo {
-  width: 144px;
-  height: 32px;
-  background: url(../static/logo.png) no-repeat;
-  margin: 16px 24px 16px 0;
+  width: 9rem;
+  height: 2.125rem;
+  background: url() no-repeat;
+  margin: 0.5rem 0 0 23.625rem;
   float: left;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 
 
 .menu {
-  height: 64px;
+  height: $header-height;
   .menu-title {
     position: fixed;
     width: 100%;
@@ -25,7 +32,7 @@ $menu-bg-color: #01050e;
       position: absolute;
       right: 10px;
 
-      font-size: 32px; 
+      font-size: 2rem; 
       color: white;
    
     }
@@ -47,5 +54,29 @@ $menu-bg-color: #01050e;
     transform: translateY(-100%);
   }
 
+}
 
+.involved-share:hover .hover,  
+.involved-share .hover-other { 
+    display: none; 
+} 
+ 
+.involved-share:hover .hover-other { 
+    display: block; 
+}
+
+.text-container {
+  width: 5rem;
+
+  a {
+    text-decoration: none;
+    color: $header-font-color;
+  }
+}
+
+.pc-home {
+  position: fixed;
+  width: 100%;
+  height: $header-height;
+  z-index: 999;
 }

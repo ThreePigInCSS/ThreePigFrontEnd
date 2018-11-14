@@ -1,6 +1,16 @@
-$hover-bg-color: #132b61;
-$active-bg-color: #0c2968;
+$hover-bg-color: #052565;
+$active-bg-color: #05256B;
 $btn-bg-color: #00b7ee;
+
+@keyframes scale {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
 
 .bellows {
   display: flex;
@@ -9,19 +19,30 @@ $btn-bg-color: #00b7ee;
 
   .active-piece-bg {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    width: 100%;
+    height: 64.375rem;
 
     img {
+      animation: scale 1.4s ease-in;
       width: 100%;
       height: 100%;
+    }
+
+    .description {
+      position: absolute;
+      top: 610px;
+      right: 125px;
+      width: 688px;
+      height: 169px;
+
+      color: white;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
   .piece-hide {
-    display: none;
+    visibility: hidden;
   }
 
   .piece {
@@ -29,11 +50,12 @@ $btn-bg-color: #00b7ee;
 
     img {
       width: 100%;
+      height: 100%;
     }
 
     .piece-top-layer {
       &:hover {
-        background: $hover-bg-color;
+        background: $hover-bg-color !important;
       }
 
       position: absolute;
@@ -48,19 +70,44 @@ $btn-bg-color: #00b7ee;
       background: #373737;
       opacity: 0.8;
       color: white;
+      font-size: 1.375rem;
+      line-height: 1.875rem;
+      p {
+        margin: 0;
+      }
+
+      .learn-more {
+        text-align: center;
+        width: 100%;
+        margin-top: 50px; 
+
+        .ant-btn {
+          width: 117px;
+          height: 31px;
+
+          background: $btn-bg-color;
+          line-height: 16px;
+          color: white;
+          font-size: 20px;
+          border-color: $btn-bg-color;
+        }
+      }
     }
 
     .layer-active {
-      background: $active-bg-color;
+      background: $active-bg-color !important;
     }
 
-    .ant-btn {
+    .btn-back {
       position: absolute;
       color: white;
-      border-color: none;
       background-color: $btn-bg-color;
-      top: 14%;
-      left: 14%;
+      background-image: url(../static/back.png);
+      width: 1.8rem;
+      height: 1.8rem;
+      top: 2.3rem;
+      left: 2.3rem;
+      border-radius: 50%;
     }
 
     .piece-content {
@@ -92,10 +139,12 @@ $btn-bg-color: #00b7ee;
 
 .piece {
   width: 20%;
+  height: 64.375rem;
 }
 
 @media only screen and (max-width: 800px) {
   .piece {
     width: 100%;
+    height: auto;
   }
 }
