@@ -93,6 +93,44 @@ class Bellows extends Component {
     ];
   }
 
+  createMobBellows(menu, index) {
+    const clickPiece = function (index) {
+      this.menuList.forEach(item => {item.active = false;});
+      this.menuList[index].active = true;
+      this.forceUpdate();
+    };
+
+    return (
+      <div onClick={clickPiece.bind(this, index)}
+          className="piece"
+          key={menu.enName}
+        >
+          <img className="piece-bg" style={{height: 150}} src={menu.bgImgBig} alt={index} />
+
+          <div style={{height: 150}} className={"piece-top-layer" + (menu.active ? ' layer-active' : '')}>
+            <p>{menu.name}</p>
+            <p>{menu.enName}</p>
+
+          </div>
+          
+          {
+            menu.active ?
+            <div className="piece-content">
+              <p className="title">{menu.name}</p>
+              <p className="title">{menu.enName}</p>
+              <hr/>
+              <p className="content">
+                {menu.mobText}
+              </p>
+
+              <div className="btn" />
+            </div> :
+            null
+          }
+        </div>
+    );
+  }
+
   createBellows() {
     const moveLayer = (layer, index, dir) => {
       layer.style.transform = `translateX(${(dir === 'right' ? 0 : -1) * index + '00%'})`;
@@ -148,38 +186,6 @@ class Bellows extends Component {
       );
     }
 
-    const createMobBellows = (menu, index) => {
-      return (
-        <div onClick={clickPiece.bind(this, index)}
-            className="piece"
-            key={menu.enName}
-          >
-            <img className="piece-bg" style={{height: 150}} src={menu.bgImgBig} alt={index} />
-
-            <div style={{height: 150}} className={"piece-top-layer" + (menu.active ? ' layer-active' : '')}>
-              <p>{menu.name}</p>
-              <p>{menu.enName}</p>
-
-            </div>
-            
-            {
-              menu.active ?
-              <div className="piece-content">
-                <p className="title">{menu.name}</p>
-                <p className="title">{menu.enName}</p>
-                <hr/>
-                <p className="content">
-                  {menu.mobText}
-                </p>
-
-                <div className="btn" />
-              </div> :
-              null
-            }
-          </div>
-      );
-    }
-  
     const createPCBellows = (menu, index) => {
       const hex = index * 25 + index;
       return (
@@ -217,7 +223,7 @@ class Bellows extends Component {
       <div className="bellows">
         {
           this.menuList.map((menu, index) => {
-            return isMob ? createMobBellows(menu, index) : createPCBellows(menu, index)
+            return isMob ? this.createMobBellows(menu, index) : createPCBellows(menu, index)
           })
         }
 
