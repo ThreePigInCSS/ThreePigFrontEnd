@@ -1,0 +1,53 @@
+.connect_wrap {
+  padding-top: 52.1%;
+  position: relative;
+  .connect_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .connect_info {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &>div {
+        margin: 38px 0;
+      }
+      .be_flex {
+        display: flex;
+        padding: 0 375px;
+      }
+      .connect_title, .connect_content, .connect_btn {
+        transition: all 1s;
+        &:before, &:after {
+          content: '';
+        }
+      }
+      .connect_title {
+        font-size: 34px;
+        color: #05256B;
+        font-weight: bold;
+      }
+      .connect_content {
+        line-height: 30px;
+        font-size: 16px;
+        color: #464646;
+      }
+      .connect_btn a {
+        background: #0087CE;
+        color: #fff;
+        width: 225px;
+        height: 42px;
+        line-height: 42px;
+        display: inline-block;
+        border-radius: 5px;
+      }
+    }
+    .connect_address {
+      //todo 地址样式
+    }
+  }
+}
