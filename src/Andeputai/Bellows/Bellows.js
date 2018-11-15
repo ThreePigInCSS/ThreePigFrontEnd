@@ -128,7 +128,7 @@ class Bellows extends Component {
   createBellows() {
     const moveLayer = (layer, index, dir) => {
       layer.style.transform = `translateX(${(dir === 'right' ? 0 : -1) * index + '00%'})`;
-      layer.style.transition = 'all .8s ease-in';
+      layer.style.transition = 'all .8s linear';
       layer.style.zIndex = '2';
     }
 
@@ -144,8 +144,8 @@ class Bellows extends Component {
       this.menuList.forEach(item => {item.active = false;});
       this.menuList[index].active = true;
       this.setState({}, () => {
-        Array.prototype.slice.call(document.querySelectorAll('.piece')).forEach((layer, index) =>  {
-          moveLayer(layer, index);
+        Array.prototype.slice.call(document.querySelectorAll('.piece')).forEach((layer, index2) =>  {
+          if(index2 <= index) moveLayer(layer, index);
         });
       });
     };
