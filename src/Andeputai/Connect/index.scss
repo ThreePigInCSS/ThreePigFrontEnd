@@ -7,8 +7,9 @@
     left: 0;
     right: 0;
     bottom: 0;
+    overflow: hidden;
     .connect_info {
-      width: 100%;
+      width: 78.5%;
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -18,7 +19,6 @@
       }
       .be_flex {
         display: flex;
-        padding: 0 375px;
       }
       .connect_title, .connect_content, .connect_btn {
         transition: all 1s;
@@ -47,7 +47,48 @@
       }
     }
     .connect_address {
-      //todo 地址样式
+      transition: all 1s;
+      position: absolute;
+      top: 0;
+      right: -20%;
+      height: 100%;
+      width: 20%;
+      background: blue;
+      background: url('./../static/bellows-02.jpg') no-repeat center center;
+      background-size: cover;
+      .cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #052565;
+        opacity: 0.57;
+      }
+      .detail {
+        height: 156px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 105px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        .back {
+          display: inline-block;
+          width: 29px;
+          height: 29px;
+          background: #00b7ee url('../static/back.png') no-repeat center center;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        .info {
+          line-height: 30px;
+          color: #fefefe;
+          font-size: 20px;
+        }
+      }
     }
   }
 }
