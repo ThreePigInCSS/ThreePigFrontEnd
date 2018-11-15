@@ -22,13 +22,7 @@ class Bellows extends Component {
   constructor(props) {
     super(props);
    
-
-    
-
-
-
-
-    
+    this.layerList = [];
     this.menuList = [
       {
         name: '学术交流',
@@ -134,14 +128,11 @@ class Bellows extends Component {
   createBellows() {
     const moveLayer = (layer, index, dir) => {
       layer.style.transform = `translateX(${(dir === 'right' ? 0 : -1) * index + '00%'})`;
-      layer.style.transition = 'all 1s ease-in';
+      layer.style.transition = 'all .8s ease-in';
       layer.style.zIndex = '2';
-      if(!dir) {
-        this.activeLayer = layer;
-      }
     }
 
-    function clearSetting(layer) {
+    const clearSetting = (layer) => {
       if(layer) {
         layer.style.transform = '';
         layer.style.transition = '';
@@ -149,12 +140,13 @@ class Bellows extends Component {
       }
     }
 
-    const clickPiece = function (index, ev) {
-      const target = ev.currentTarget;
+    const clickPiece = function (index) {
       this.menuList.forEach(item => {item.active = false;});
       this.menuList[index].active = true;
       this.setState({}, () => {
-        moveLayer(target, index);
+        Array.prototype.slice.call(document.querySelectorAll('.piece')).forEach((layer, index) =>  {
+          moveLayer(layer, index);
+        });
       });
     };
 
@@ -162,7 +154,9 @@ class Bellows extends Component {
       this.menuList[index].active = false;
       this.forceUpdate();
       this.setState({}, () => {
-        moveLayer(this.activeLayer, index, 'right');
+        Array.prototype.slice.call(document.querySelectorAll('.piece')).forEach((layer, index) =>  {
+          moveLayer(layer, index, 'right');
+        });
       });
       ev.stopPropagation();
     }
@@ -189,7 +183,7 @@ class Bellows extends Component {
     const createPCBellows = (menu, index) => {
       const hex = index * 25 + index;
       return (
-        <div id="container" onClick={clickPiece.bind(this, index)}
+        <div onClick={clickPiece.bind(this, index)}
             className={"piece" + (hasActive ? (menu.active ? '' : ' piece-hide') : '')}
             key={menu.enName}
             ref={clearSetting}
