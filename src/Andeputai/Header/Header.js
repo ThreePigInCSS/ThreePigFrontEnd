@@ -3,6 +3,9 @@ import { Menu, Icon } from 'antd';
 import { detectmob } from '../../utils/utils.js'
 import './header.scss';
 import logo from '../static/logo.png';
+import logoS from '../static/logoS.png';
+import btnO from '../static/open.png';
+import btnS from '../static/static.png';
 
 
 class Header extends Component {
@@ -83,13 +86,13 @@ class Header extends Component {
 
     return (
       <div className="menu" id="home">
-        <div className="menu-title">
+        <div className={"menu-title " + (collapsed ? '' :  'menu-open')}>
           <a href="#home">
-            <img src={logo} alt="img" />
+            <img src={logoS} alt="img" />
           </a>
 
           <div className="menu-btn" onClick={toggleCollapsed}>
-            <Icon type={collapsed ? 'menu-unfold' : 'menu-fold'} />
+            <img src={collapsed ? btnS : btnO} alt="img" />
           </div>
         </div>
 
@@ -99,18 +102,23 @@ class Header extends Component {
           <Menu
             theme="dark"
             mode="inline"
-            style={{ lineHeight: '34px' }}
+            style={{ backgroundColor: '#05256B' }}
           >
             {
               this.navList.map(nav => (
-                <Menu.Item key={nav.name}>
+                <Menu.Item className="menu-item" key={nav.name}>
                   <a href={nav.anchor}>
-                    {nav.name}
+                    {nav.name + ' '} / {' '+nav.zName}
                   </a>
                 </Menu.Item>
               ))
             }
           </Menu>
+          <div className="devide"/>
+          <div className="menu-footer">
+              
+              Beijing UnderProved medical technology co. LTD
+          </div>
         </div>
 
       </div>

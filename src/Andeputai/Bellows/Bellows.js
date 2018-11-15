@@ -12,10 +12,12 @@ import bb02 from '../static/bellows-02-big.jpg';
 import bb03 from '../static/bellows-03-big.jpg';
 import bb04 from '../static/bellows-04-big.jpg';
 import bb05 from '../static/bellows-05-big.jpg';
+import btnBack from '../static/m-pull.png';
 
 const { Content } = Layout;
 
 let learnMore = '了解更多',
+  watchMore = '查看更多',
   isMob = false;
 
 class Bellows extends Component {
@@ -34,7 +36,7 @@ class Bellows extends Component {
           'Attend more than 30 professional academic conferences every year. Carry out academic research with many well-known experts and publish professional papers.'
         ],
         bgImgBig: bb01,
-        mobText: '',
+        mobText: 'Established in 2011 by the co-founder team of medical professional background, Beijing UnderProved medical technology co., LTD focuses on the research and development, management and market transformation of medical technology. I have been focusing on skin health for 7 years, and working together with a professional consulting team composed of authoritative experts in pharmacy.',
       },
       {
         name: '医学供需数据整合',
@@ -46,7 +48,7 @@ class Bellows extends Component {
           'Attend more than 30 professional academic conferences every year. Carry out academic research with many well-known experts and publish professional papers.'
         ],
         bgImgBig: bb02,
-        mobText: '',
+        mobText: 'Established in 2011 by the co-founder team of medical professional background, Beijing UnderProved medical technology co., LTD focuses on the research and development, management and market transformation of medical technology. I have been focusing on skin health for 7 years, and working together with a professional consulting team composed of authoritative experts in pharmacy.',
       },
       {
         name: '医学课题研究',
@@ -58,7 +60,7 @@ class Bellows extends Component {
           'According to clinical treatment needs, in combination with the new technological achievements of the research institutes, we cooperate with a number of universities and research institutes for joint research and development',
         ],
         bgImgBig: bb03,
-        mobText: '',
+        mobText: 'Established in 2011 by the co-founder team of medical professional background, Beijing UnderProved medical technology co., LTD focuses on the research and development, management and market transformation of medical technology. I have been focusing on skin health for 7 years, and working together with a professional consulting team composed of authoritative experts in pharmacy.',
       },
       {
         name: '医学医用管理',
@@ -70,7 +72,7 @@ class Bellows extends Component {
           'Attend more than 30 professional academic conferences every year. Carry out academic research with many well-known experts and publish professional papers.'
         ],
         bgImgBig: bb04,
-        mobText: '',
+        mobText: 'Established in 2011 by the co-founder team of medical professional background, Beijing UnderProved medical technology co., LTD focuses on the research and development, management and market transformation of medical technology. I have been focusing on skin health for 7 years, and working together with a professional consulting team composed of authoritative experts in pharmacy.',
       },
       {
         name: '医学技术产品化解决方案',
@@ -82,26 +84,67 @@ class Bellows extends Component {
           'Attend more than 30 professional academic conferences every year. Carry out academic research with many well-known experts and publish professional papers.'
         ],
         bgImgBig: bb05,
-        mobText: '',
+        mobText: 'Established in 2011 by the co-founder team of medical professional background, Beijing UnderProved medical technology co., LTD focuses on the research and development, management and market transformation of medical technology. I have been focusing on skin health for 7 years, and working together with a professional consulting team composed of authoritative experts in pharmacy.',
       },
     ];
   }
 
   createMobBellows(menu, index) {
     const clickPiece = function (index) {
-      this.menuList.forEach(item => {item.active = false;});
-      this.menuList[index].active = true;
-      this.forceUpdate();
+      if(this.menuList[index].active) {
+        contentBack(index);
+      } else {
+        this.menuList.forEach(item => {item.active = false;});
+        this.menuList[index].active = true;
+  
+        this.setState({}, () => {
+          Array.prototype.slice.call(document.querySelectorAll('.piece')).forEach((layer, index2) =>  {
+            if(index2 > index) moveLayer(layer);
+          });
+        });
+      }
     };
 
+    const moveLayer = (layer, dir) => {
+      layer.style.animation = dir === 'top' ? 'moveToTop 1s ease-in' : 'moveToBottom 1s ease-in';
+      layer.style.zIndex = 2;
+      setTimeout(() => {
+        clearSetting(layer);
+        this.animationStatus = false;
+      }, 1000);
+    }
+
+    const clearSetting = (layer) => {
+      if(layer) {
+        layer.style.animation = '';
+        layer.style.zIndex = 'auto';
+      } 
+    }
+
+    const contentBack = (index, ev) => {
+      Array.prototype.slice.call(document.querySelectorAll('.piece')).forEach((layer, index2) =>  {
+        if(index2 > index)  moveLayer(layer, 'top');
+      });
+
+      setTimeout(() => {
+        this.menuList[index].active = false;
+        this.forceUpdate();
+      }, 998);
+      
+      ev && ev.stopPropagation();
+    }
+
+    const hex = index * 25 + index;
     return (
       <div onClick={clickPiece.bind(this, index)}
           className="piece"
           key={menu.enName}
         >
-          <img className="piece-bg" style={{height: 150}} src={menu.bgImgBig} alt={index} />
+          <img className="piece-bg" style={{height: 134 / 16 + 'rem'}} src={menu.bgImgBig} alt={index} />
 
-          <div style={{height: 150}} className={"piece-top-layer" + (menu.active ? ' layer-active' : '')}>
+          <div style={{height: 134 / 16 + 'rem', backgroundColor: `rgba(${hex}, ${hex}, ${hex})`,}} 
+            className={"piece-top-layer" + (menu.active ? ' layer-active' : '')}
+          >
             <p>{menu.name}</p>
             <p>{menu.enName}</p>
 
@@ -117,7 +160,13 @@ class Bellows extends Component {
                 {menu.mobText}
               </p>
 
-              <div className="btn" />
+              <div className="buttons">
+                <div className="btn-more">
+                  {watchMore + ' '}>>
+                </div>
+
+                <div onClick={contentBack.bind(this, index)} className="btn-content-back"><img src={btnBack} alt='img' /></div>
+              </div>
             </div> :
             null
           }
