@@ -16,6 +16,7 @@ $btn-bg-color: #00b7ee;
   display: flex;
   flex-flow: row wrap;
   position: relative;
+  overflow: hidden;
 
 
   .blank-block {
@@ -117,9 +118,12 @@ $btn-bg-color: #00b7ee;
     }
 
     .piece-content {
-      padding: 3rem;
       background-color: white;
       position: relative;
+      
+      .content-wrap {
+        padding: 3rem;
+      }
     
       .title {
         color: $active-bg-color;
@@ -182,27 +186,6 @@ $btn-bg-color: #00b7ee;
   height: 64.375rem;
 }
 
-@keyframes moveToBottom {
-  from {
-    transform: translateY(-354px);
-  }
-
-  to {
-    transform: translateY(0);
-
-  }
-}
-
-@keyframes moveToTop {
-  from {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(-354px);
-  }
-}
-
 @media only screen and (max-width: 800px) {
   .piece {
     width: 100%;
@@ -210,6 +193,16 @@ $btn-bg-color: #00b7ee;
 
     .piece-top-layer {
       font-size: 16px !important;
+    }
+
+    .piece-static {
+      height: 0 !important;
+      transition: height .4s linear;
+    }
+
+    .piece-active {
+      height: 354px;
+      transition: height .4s linear;
     }
   }
 }

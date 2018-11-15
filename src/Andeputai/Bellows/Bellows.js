@@ -97,39 +97,13 @@ class Bellows extends Component {
         this.menuList.forEach(item => {item.active = false;});
         this.menuList[index].active = true;
   
-        this.setState({}, () => {
-          Array.prototype.slice.call(document.querySelectorAll('.piece')).forEach((layer, index2) =>  {
-            if(index2 > index) moveLayer(layer);
-          });
-        });
+        this.forceUpdate();
       }
     };
 
-    const moveLayer = (layer, dir) => {
-      layer.style.animation = dir === 'top' ? 'moveToTop 1s ease-in' : 'moveToBottom 1s ease-in';
-      layer.style.zIndex = 2;
-      setTimeout(() => {
-        clearSetting(layer);
-        this.animationStatus = false;
-      }, 1000);
-    }
-
-    const clearSetting = (layer) => {
-      if(layer) {
-        layer.style.animation = '';
-        layer.style.zIndex = 'auto';
-      } 
-    }
-
     const contentBack = (index, ev) => {
-      Array.prototype.slice.call(document.querySelectorAll('.piece')).forEach((layer, index2) =>  {
-        if(index2 > index)  moveLayer(layer, 'top');
-      });
-
-      setTimeout(() => {
-        this.menuList[index].active = false;
-        this.forceUpdate();
-      }, 998);
+      this.menuList[index].active = false;
+      this.forceUpdate();
       
       ev && ev.stopPropagation();
     }
@@ -151,24 +125,28 @@ class Bellows extends Component {
           </div>
           
           {
-            menu.active ?
-            <div className="piece-content">
-              <p className="title">{menu.name}</p>
-              <p className="title">{menu.enName}</p>
-              <hr/>
-              <p className="content">
-                {menu.mobText}
-              </p>
+            <div className={"piece-content " + (menu.active ? 'piece-active' : 'piece-static')} 
+              id="piece-transition"
+            >
+              <div className="content-wrap">
+                <p className="title">{menu.name}</p>
+                <p className="title">{menu.enName}</p>
+                <hr/>
+                <p className="content">
+                  {menu.mobText}
+                </p>
 
-              <div className="buttons">
-                <div className="btn-more">
-                  {watchMore + ' '}>>
+                <div className="buttons">
+                  <div className="btn-more">
+                    {watchMore + ' '}>>
+                  </div>
+
+                  <div onClick={contentBack.bind(this, index)} className="btn-content-back"><img src={btnBack} alt='img' /></div>
                 </div>
 
-                <div onClick={contentBack.bind(this, index)} className="btn-content-back"><img src={btnBack} alt='img' /></div>
               </div>
-            </div> :
-            null
+
+            </div>
           }
         </div>
     );
