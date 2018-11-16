@@ -2,35 +2,33 @@ $hover-bg-color: #052565;
 $active-bg-color: #05256B;
 $btn-bg-color: #00b7ee;
 
-@keyframes scale {
-  0% {
-    width: 0;
-  }
-
-  100% {
-    width: 100%;
-  }
-}
-
 .bellows {
   display: flex;
   flex-flow: row wrap;
   position: relative;
   overflow: hidden;
 
-
-  .blank-block {
-    width: 100%;
-    height: 400px;
+  .pc-piece-active {
+    width: 20%;
+    transition: width .4s ease;
   }
 
-  .active-piece-bg {
+  .pc-piece-hide {
+    width: 0;
+    transition: width .4s ease;
+
+    .piece-top-layer {
+      visibility: hidden;
+    }
+  }
+
+  .piece-bg {
     position: absolute;
-    width: 100%;
-    height: 64.375rem;
+    right: 0;
+    width: 0;
+    height: 0;
 
     img {
-      animation: scale 1.4s ease-in;
       width: 100%;
       height: 100%;
     }
@@ -48,8 +46,21 @@ $btn-bg-color: #00b7ee;
     }
   }
 
-  .piece-hide {
-    visibility: hidden;
+  .active-bg {
+    width: 100%;
+    height: 64.375rem;
+    transition: width .4s ease;
+  }
+
+
+  .static-bg {
+    width: 0%;
+    height: 64.375rem;
+    transition: width .4s ease;
+
+    .description {
+      visibility: hidden;
+    }
   }
 
   .piece {
@@ -184,6 +195,7 @@ $btn-bg-color: #00b7ee;
 .piece {
   width: 20%;
   height: 64.375rem;
+  transition: width .4s ease;
 }
 
 @media only screen and (max-width: 800px) {

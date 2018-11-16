@@ -153,42 +153,22 @@ class Bellows extends Component {
   }
 
   createBellows() {
-    const moveLayer = (layer, index, dir) => {
-      layer.style.transform = `translateX(${(dir === 'right' ? 0 : -1) * index + '00%'})`;
-      layer.style.transition = 'all .8s linear';
-      layer.style.zIndex = '2';
-    }
-
-    const clearSetting = (layer) => {
-      if(layer) {
-        layer.style.transform = '';
-        layer.style.transition = '';
-        layer.style.zIndex = 'auto';
-      }
-    }
-
     const clickPiece = function (index) {
       this.menuList.forEach(item => {item.active = false;});
       this.menuList[index].active = true;
-      this.setState({}, () => {
-        Array.prototype.slice.call(document.querySelectorAll('.piece')).forEach((layer, index2) =>  {
-          if(index2 <= index) moveLayer(layer, index);
-        });
-      });
+      this.forceUpdate();
     };
 
     const back = function (index, ev) {
       this.menuList[index].active = false;
       this.forceUpdate();
-      this.setState({}, () => {
-        Array.prototype.slice.call(document.querySelectorAll('.piece')).forEach((layer, index) =>  {
-          moveLayer(layer, index, 'right');
-        });
-      });
       ev.stopPropagation();
     }
 
     function showBigImg(menu) {
+      if(!menu) {
+        return null;
+      }
       function setHtml(ref, text) {
         if(ref) {
           ref.innerHTML = text;
@@ -196,7 +176,7 @@ class Bellows extends Component {
       }
 
       return (
-        <div className="active-piece-bg">
+        <div  key={menu.enName} className={"piece-bg " + (menu.active ? 'active-bg' : 'static-bg')}>
           <img  src={menu.bgImgBig} alt="pic" />
 
           <div className="description">
@@ -211,9 +191,8 @@ class Bellows extends Component {
       const hex = index * 25 + index;
       return (
         <div onClick={clickPiece.bind(this, index)}
-            className={"piece" + (hasActive ? (menu.active ? '' : ' piece-hide') : '')}
+            className={"piece " + (hasActive ? (menu.active ? 'pc-piece-active' : 'pc-piece-hide') : '')}
             key={menu.enName}
-            ref={clearSetting}
           >
               {
                 menu.active ?
@@ -249,9 +228,11 @@ class Bellows extends Component {
         }
 
         {
-          hasActive && !isMob ?
-            showBigImg(activeMenu[0]) :
-            null
+        
+          !isMob && 
+          this.menuList.map((menu) => {
+            return showBigImg(menu)
+          })
         }
       </div>
     );
