@@ -114,7 +114,7 @@ class Bellows extends Component {
           className="piece"
           key={menu.enName}
         >
-          <img className="piece-bg" style={{height: 134 / 16 + 'rem'}} src={menu.bgImgBig} alt={index} />
+          <img style={{height: 134 / 16 + 'rem'}} src={menu.bgImgBig} alt={index} />
 
           <div style={{height: 134 / 16 + 'rem', backgroundColor: `rgba(${hex}, ${hex}, ${hex})`,}} 
             className={"piece-top-layer" + (menu.active ? ' layer-active' : '')}
