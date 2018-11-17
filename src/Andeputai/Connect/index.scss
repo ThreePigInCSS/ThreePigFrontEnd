@@ -92,3 +92,39 @@
     }
   }
 }
+
+.connect_phone {
+  display: none;
+  padding-bottom: 5.625rem;
+  .connect_content {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .header {
+    font-weight: bold;
+    color: #05256B;
+    font-size: 1.5rem;
+    margin-top: 4.84rem;
+    margin-bottom: 3.5rem;
+  }
+  .content {
+    font-size: 0.8125rem;
+    color: #464646;
+    margin-bottom: 2.6875rem;
+  }
+  .connect_btn {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: #fff;
+    background: #0087CE;
+    font-size: 0.8125rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .connect_wrap {
+    display: none;
+  }
+  .connect_phone {
+    display: block;
+  }
+}

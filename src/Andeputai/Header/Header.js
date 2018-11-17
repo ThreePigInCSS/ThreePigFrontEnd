@@ -21,7 +21,7 @@ class Header extends Component {
     this.navList = [
       {
         name: 'Home',
-        anchor: '.ant-carousel',
+        anchor: '#home',
         zName: '首页',
       },
       {

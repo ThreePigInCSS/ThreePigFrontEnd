@@ -22,20 +22,22 @@ const imgs = [
 export default class CarouselIndex extends PureComponent{
     render() {
         return (
-            <Carousel autoplay autoplaySpeed={3000}>
-                {
-                    imgs.map(item => (
-                        <div key={item.info}>
-                            <div className="wrapper" style={{backgroundImage: `url(${item.url})`, color: '#fff'}}>
-                                <div className="info-box">
-                                    <span className="info">{item.info}</span>
-                                    <span className="infoEN">{item.infoEN}</span>
+            <div id="home">
+                <Carousel autoplay autoplaySpeed={3000}>
+                    {
+                        imgs.map(item => (
+                            <div key={item.info}>
+                                <div className="wrapper" style={{backgroundImage: `url(${item.url})`, color: '#fff'}}>
+                                    <div className="info-box">
+                                        <span className="info">{item.info}</span>
+                                        <span className="infoEN">{item.infoEN}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))
-                }
-            </Carousel>
+                        ))
+                    }
+                </Carousel>
+            </div>
         );
     }
 }
