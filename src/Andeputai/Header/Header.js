@@ -66,7 +66,10 @@ class Header extends Component {
 
   // > 0 up 
   // < 0 down
-  acc() {
+  acc(event) {
+    if(!this.state.collapsed) {
+      event.preventDefault();
+    }
     const dir = window.pageYOffset - this.state.lastY > 0;
     this.state.lastY =window.pageYOffset;
     this.setState({
