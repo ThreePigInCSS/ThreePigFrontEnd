@@ -1,7 +1,7 @@
 .footer_container {
   background: #fff;
   .footer_title {
-    max-width: 1194px;
+    max-width: 60%;
     margin: 90px auto 52px;
     color: #05256B;
     font-size: 34px;
@@ -9,7 +9,8 @@
     text-align: left;
   }
   .footer {
-    max-width: 1194px;
+   /* max-width: 1194px;*/
+    max-width: 60%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -32,7 +33,7 @@
   .footer_info_content {
     background: #052565;
     .footer_info {
-      max-width: 1194px;
+      max-width: 60%;
       margin: 0 auto;
       color: #fff;
       height: 53px;
