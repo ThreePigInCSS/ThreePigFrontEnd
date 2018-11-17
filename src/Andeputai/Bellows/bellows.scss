@@ -68,51 +68,56 @@ $btn-bg-color: #00b7ee;
   .piece {
     position: relative;
 
-    img {
+    .img-wrapper {
+      position: relative;
       width: 100%;
-      height: 100%;
-    }
+      padding-top: 35.7%;
+      background: no-repeat center center;
+      background-size: 100% 100%;
 
-    .piece-top-layer {
-      &:hover {
-        background: $hover-bg-color !important;
-      }
-
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 2;
-      background: #373737;
-      opacity: 0.8;
-      color: white;
-      font-size: 1.375rem;
-      line-height: 1.875rem;
-      p {
-        margin: 0;
-      }
-
-      .learn-more {
-        text-align: center;
-        width: 100%;
-        margin-top: 50px; 
-
-        .ant-btn {
-          width: 117px;
-          height: 31px;
-
-          background: $btn-bg-color;
-          line-height: 16px;
-          color: white;
-          font-size: 20px;
-          border-color: $btn-bg-color;
+      .piece-top-layer {
+        &:hover {
+          background: $hover-bg-color !important;
+        }
+  
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        background: #373737;
+        opacity: 0.8;
+        color: white;
+        font-size: 1.375rem;
+        line-height: 1.875rem;
+        p {
+          margin: 0;
+        }
+  
+        .learn-more {
+          text-align: center;
+          width: 100%;
+          margin-top: 50px; 
+  
+          .ant-btn {
+            width: 117px;
+            height: 31px;
+  
+            background: $btn-bg-color;
+            line-height: 16px;
+            color: white;
+            font-size: 20px;
+            border-color: $btn-bg-color;
+          }
         }
       }
     }
+
+   
 
     .layer-active {
       background: $active-bg-color !important;
@@ -173,6 +178,7 @@ $btn-bg-color: #00b7ee;
         line-height: 25px;
         position: relative;
       }
+
       .btn-more {
         text-align: left;
         flex: 1;
@@ -183,12 +189,13 @@ $btn-bg-color: #00b7ee;
       }
       
       .btn-content-back {
-      
         position: absolute;
         right: -1rem;
-        top: 0;
+        bottom: 6px;
         width: 15px;
         height: 15px;
+        background: no-repeat center center;
+        background-size: 100% 100%;
       }
     }
   }
@@ -204,6 +211,7 @@ $btn-bg-color: #00b7ee;
   .piece {
     width: 100%;
     height: auto;
+    
 
     .piece-top-layer {
       font-size: 16px !important;

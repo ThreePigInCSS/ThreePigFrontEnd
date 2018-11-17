@@ -114,19 +114,18 @@ class Bellows extends Component {
           className="piece"
           key={menu.enName}
         >
-          <img style={{height: 134 / 16 + 'rem'}} src={menu.bgImgBig} alt={index} />
+          <div className="img-wrapper" style={{backgroundImage: `url(${menu.bgImgBig})`}}>
+            <div style={{backgroundColor: `rgba(${hex}, ${hex}, ${hex})`,}} 
+              className={"piece-top-layer" + (menu.active ? ' layer-active' : '')}
+            >
+              <p>{menu.name}</p>
+              <p>{menu.enName}</p>
 
-          <div style={{height: 134 / 16 + 'rem', backgroundColor: `rgba(${hex}, ${hex}, ${hex})`,}} 
-            className={"piece-top-layer" + (menu.active ? ' layer-active' : '')}
-          >
-            <p>{menu.name}</p>
-            <p>{menu.enName}</p>
-
+            </div>
           </div>
           
           {
             <div className={"piece-content " + (menu.active ? 'piece-active' : 'piece-static')} 
-              id="piece-transition"
             >
               <div className="content-wrap">
                 <p className="title">{menu.name}</p>
@@ -141,7 +140,10 @@ class Bellows extends Component {
                     {watchMore + ' '}>>
                   </div>
 
-                  <div onClick={contentBack.bind(this, index)} className="btn-content-back"><img src={btnBack} alt='img' /></div>
+                  <div onClick={contentBack.bind(this, index)} 
+                    className="btn-content-back"
+                    style={{backgroundImage: `url(${btnBack})`}}
+                  />
                 </div>
 
               </div>

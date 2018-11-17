@@ -103,7 +103,7 @@ class Header extends Component {
           theme="dark"
           mode="horizontal"
           style={{ lineHeight: '50px', fontSize: '1rem' }}
-          selectedKeys={current}
+          selectedKeys={[current]}
           onClick={handleClick}
         >
           {
