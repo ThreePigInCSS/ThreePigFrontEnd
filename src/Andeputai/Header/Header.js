@@ -146,7 +146,7 @@ class Header extends Component {
           </a>
 
           <div className="menu-btn" onClick={toggleCollapsed}>
-            <img src={collapsed ? btnS : btnO} alt="img" />
+            <img src={collapsed ? btnS : btnO} className={collapsed ? 'active' : ''} alt="img" />
           </div>
         </div>
 
