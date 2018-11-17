@@ -95,29 +95,65 @@
 
 .connect_phone {
   display: none;
-  padding-bottom: 5.625rem;
-  .connect_content {
-    width: 90%;
-    margin: 0 auto;
-  }
-  .header {
-    font-weight: bold;
-    color: #05256B;
-    font-size: 1.5rem;
-    margin-top: 4.84rem;
-    margin-bottom: 3.5rem;
-  }
-  .content {
-    font-size: 0.8125rem;
-    color: #464646;
-    margin-bottom: 2.6875rem;
-  }
-  .connect_btn {
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    color: #fff;
-    background: #0087CE;
-    font-size: 0.8125rem;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  .connect_box {
+    padding-bottom: 5.625rem;
+    width: 200%;
+    white-space: normal;
+    position: relative;
+    transition: all 0.6s;
+    .connect_content {
+      width: 50%;
+      padding: 0 2%;
+      .header {
+        font-weight: bold;
+        color: #05256B;
+        font-size: 1.5rem;
+        padding-top: 4.84rem;
+        margin-bottom: 3.5rem;
+      }
+      .content {
+        font-size: 0.8125rem;
+        color: #464646;
+        margin-bottom: 2.6875rem;
+      }
+      .connect_btn {
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        color: #fff;
+        background: #0087CE;
+        font-size: 0.8125rem;
+      }
+    }
+    .connect_cover {
+      width: 50%;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      display: flex;
+      background: url('./../static/bellows-02.jpg') no-repeat center center;
+      background-size: cover;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      .back {
+        display: inline-block;
+        width: 29px;
+        height: 29px;
+        background: #00b7ee url('../static/back.png') no-repeat center center;
+        border-radius: 50%;
+        margin-bottom: 2rem;
+      }
+      .info {
+        font-size: 1rem;
+        line-height: 2rem;
+        color: #fff;
+        margin-bottom: 3.5rem;
+      }
+    }
   }
 }
 @media screen and (max-width: 768px) {
