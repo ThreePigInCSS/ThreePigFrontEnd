@@ -18,7 +18,9 @@ $btn-bg-color: #00b7ee;
     transition: width .4s ease;
 
     .piece-top-layer {
-      visibility: hidden;
+      p {
+        visibility: hidden;
+      }
     }
   }
 
@@ -218,3 +220,4 @@ $btn-bg-color: #00b7ee;
     }
   }
 }
+

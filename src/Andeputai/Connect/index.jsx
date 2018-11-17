@@ -24,7 +24,7 @@ export default class CarouselIndex extends PureComponent{
     render() {
         const { beLeft } = this.state;
         return (
-           <div className="connect_wrap">
+           <div className="connect_wrap" id="about-us">
                <div className="connect_box">
                    <div className="connect_info" style={{ width: beLeft ? '80%' : '100%' }}>
                        <div>

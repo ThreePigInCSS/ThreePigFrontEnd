@@ -1,5 +1,6 @@
 $menu-bg-color: #202020;
 $header-height: 3.125rem;
+$header-upheight: 2rem;
 $header-font-color: #EDEDED;
 $mob-height: 100rem/16;
 $mob-margin-top: 26rem/16;
@@ -123,12 +124,19 @@ body {
 
     .menu-title {
       height: $mob-height;
+      padding:$mob-margin-top $mob-margin-left ;
 
-      a img {
-        position: absolute;
-        left: $mob-margin-left;
-        top: $mob-margin-top;
-        height: $mob-logo-height;
+
+      a {
+        text-align: left;
+        height: 100%;
+        img {
+          // position: absolute;
+          // left: $mob-margin-left;
+          // top: $mob-margin-top;
+          // height: $mob-logo-height;
+          height: 100%;
+        }
       }
 
       .menu-btn {
@@ -144,5 +152,14 @@ body {
 
   .menu-open {
     background-color: #05256B !important;
+  }
+}
+
+#up-animation {
+  height: $header-upheight;
+  transition: .4s ease;
+
+  a {
+    height: 2rem;
   }
 }

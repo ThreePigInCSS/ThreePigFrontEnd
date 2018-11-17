@@ -15,17 +15,18 @@ class Header extends Component {
 
     this.state = {
       collapsed: true,
+      dir: 'static',
     }
 
     this.navList = [
       {
         name: 'Home',
-        anchor: '#home',
+        anchor: '.ant-carousel',
         zName: '首页',
       },
       {
         name: 'About us',
-        anchor: '#',
+        anchor: '#about-us',
         zName: '了解我们',
       },
       {
@@ -40,17 +41,60 @@ class Header extends Component {
       },
       {
         name: 'Dynamic',
-        anchor: '#',
+        anchor: '#cooperation',
         zName: '企业动态',
       },
     ];
   }
 
+  componentDidMount() {
+    document.addEventListener('scroll', this.onMouseWheel.bind(this));
+    this.findVisibleContent();
+  }
+
+  findVisibleContent = () => {
+    this.navList.forEach(nav => {
+      const rect = document.querySelector(nav.anchor).getBoundingClientRect(),
+        {top} =  rect;
+      if(Math.abs(top) < 150) {
+        this.setState({
+          current: nav.name,
+        });
+      }
+    });
+  }
+
+  // > 0 up 
+  // < 0 down
+  acc() {
+    const dir = window.pageYOffset - this.state.lastY > 0;
+    this.state.lastY =window.pageYOffset;
+    this.setState({
+      dir,
+    });
+  }
+
+  onMouseWheel(event) {
+    this.findVisibleContent();
+    if(detectmob()) {
+      this.acc(event);
+    }
+  }
+
+  
+
   createPCHeader() {
+    const {current} = this.state;
+
+    const handleClick = (e) => {
+      this.setState({
+        current: e.key,
+      });
+    }
     return(
-      <div id="home" className="pc-home">
+      <div className="pc-home">
         <div className="logo">
-          <a href="#home">
+          <a href=".ant-carousel">
             <img src={logo} alt="img"/>
           </a>
         </div>
@@ -59,10 +103,14 @@ class Header extends Component {
           theme="dark"
           mode="horizontal"
           style={{ lineHeight: '50px', fontSize: '1rem' }}
+          selectedKeys={current}
+          onClick={handleClick}
         >
           {
             this.navList.map(nav => (
-              <Menu.Item key={nav.name} className="involved-share">
+              <Menu.Item key={nav.name} 
+                className={"involved-share " + (nav.active ? 'ant-menu-item-selected' : '')}
+              >
                 <div className="text-container">
                   <a className="hover" href={nav.anchor}>{nav.name}</a>
                   <a className="hover-other" href={nav.anchor}>{nav.zName}</a>
@@ -76,8 +124,12 @@ class Header extends Component {
   }
 
   createMobHeader() {
-    const {collapsed} = this.state;
+    let {collapsed, dir} = this.state,
+      id = 'static-animation';
 
+    if(dir !== 'static' ) {
+      id = dir ? 'up-animation' : 'down-animation';
+    }
     const toggleCollapsed = () => {
       this.setState({
         collapsed: !collapsed
@@ -85,9 +137,9 @@ class Header extends Component {
     };
 
     return (
-      <div className="menu" id="home">
-        <div className={"menu-title " + (collapsed ? '' :  'menu-open')}>
-          <a href="#home">
+      <div className="menu" >
+        <div id={id} className={"menu-title " + (collapsed ? '' :  'menu-open')}>
+          <a href=".ant-carousel">
             <img src={logoS} alt="img" />
           </a>
 
