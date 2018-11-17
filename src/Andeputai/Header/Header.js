@@ -151,7 +151,6 @@ class Header extends Component {
         </div>
 
         <div className={'menu-content ' + (collapsed ? 'content-hide' : 'content-show') }
-          id="menu-selector"
         >
           <Menu
             theme="dark"
@@ -168,10 +167,11 @@ class Header extends Component {
               ))
             }
           </Menu>
-          <div className="devide"/>
-          <div className="menu-footer">
-              
+
+          <div className="menu-footer">    
+            <p>
               Beijing UnderProved medical technology co. LTD
+            </p>
           </div>
         </div>
 
