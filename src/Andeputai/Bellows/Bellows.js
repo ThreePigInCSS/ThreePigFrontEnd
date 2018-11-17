@@ -196,22 +196,24 @@ class Bellows extends Component {
             className={"piece " + (hasActive ? (menu.active ? 'pc-piece-active' : 'pc-piece-hide') : '')}
             key={menu.enName}
           >
-              {
-                menu.active ?
-                null :
-                <img className="piece-bg" src={menu.bgImg} alt={index} />
-              }
-            
-
-            <div style={{
-              backgroundColor: `rgba(${hex}, ${hex}, ${hex})`,
-            }} 
-              className={"piece-top-layer" + (menu.active ? ' layer-active' : '')}
+            <div className="img-wrapper"
+              style={{
+                paddingTop: 0,
+                height: '100%',
+                backgroundImage: !menu.active ? `url(${menu.bgImg})` : null
+              }}
             >
-              <p>{menu.name}</p>
-              <p>{menu.enName}</p>
-              {menu.active && <div className="learn-more"><Button>{learnMore}</Button></div>}
-              {menu.active && <div className="btn-back" onClick={back.bind(this, index)} />}
+              <div style={{
+                  backgroundColor: `rgba(${hex}, ${hex}, ${hex})`,
+                }} 
+                className={"piece-top-layer" + (menu.active ? ' layer-active' : '')}
+              >
+                <p>{menu.name}</p>
+                <p>{menu.enName}</p>
+                {menu.active && <div className="learn-more"><Button>{learnMore}</Button></div>}
+                {menu.active && <div className="btn-back" onClick={back.bind(this, index)} />}
+              
+              </div>
             </div>
           </div>
       );
