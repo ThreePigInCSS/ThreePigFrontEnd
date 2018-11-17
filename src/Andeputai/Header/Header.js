@@ -67,9 +67,6 @@ class Header extends Component {
   // > 0 up 
   // < 0 down
   acc(event) {
-    if(!this.state.collapsed) {
-      event.preventDefault();
-    }
     const dir = window.pageYOffset - this.state.lastY > 0;
     this.state.lastY =window.pageYOffset;
     this.setState({
@@ -133,7 +130,7 @@ class Header extends Component {
       id = 'static-animation';
 
     if(dir !== 'static' ) {
-      id = dir ? 'up-animation' : 'down-animation';
+      id = dir && collapsed ? 'up-animation' : 'down-animation';
     }
     const toggleCollapsed = () => {
       this.setState({
@@ -144,7 +141,7 @@ class Header extends Component {
     return (
       <div className="menu" >
         <div id={id} className={"menu-title " + (collapsed ? '' :  'menu-open')}>
-          <a href=".ant-carousel">
+          <a href="#home">
             <img src={logoS} alt="img" />
           </a>
 
@@ -159,6 +156,7 @@ class Header extends Component {
             theme="dark"
             mode="inline"
             style={{ backgroundColor: '#05256B' }}
+            onClick={toggleCollapsed}
           >
             {
               this.navList.map(nav => (
