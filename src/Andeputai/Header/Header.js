@@ -93,32 +93,34 @@ class Header extends Component {
     }
     return(
       <div className="pc-home">
-        <div className="logo">
-          <a href=".ant-carousel">
-            <img src={logo} alt="img"/>
-          </a>
-        </div>
+          <div className="header_container">
+              <div className="logo">
+                  <a href=".ant-carousel">
+                      <img src={logo} alt="img"/>
+                  </a>
+              </div>
 
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          style={{ lineHeight: '50px', fontSize: '1rem' }}
-          selectedKeys={[current]}
-          onClick={handleClick}
-        >
-          {
-            this.navList.map(nav => (
-              <Menu.Item key={nav.name} 
-                className={"involved-share " + (nav.active ? 'ant-menu-item-selected' : '')}
+              <Menu
+                  theme="dark"
+                  mode="horizontal"
+                  style={{lineHeight: '50px', fontSize: '1rem'}}
+                  selectedKeys={[current]}
+                  onClick={handleClick}
               >
-                <div className="text-container">
-                  <a className="hover" href={nav.anchor}>{nav.name}</a>
-                  <a className="hover-other" href={nav.anchor}>{nav.zName}</a>
-                </div>
-              </Menu.Item>
-            ))
-          }
-        </Menu>
+                  {
+                      this.navList.map(nav => (
+                          <Menu.Item key={nav.name}
+                                     className={"involved-share " + (nav.active ? 'ant-menu-item-selected' : '')}
+                          >
+                              <div className="text-container">
+                                  <a className="hover" href={nav.anchor}>{nav.name}</a>
+                                  <a className="hover-other" href={nav.anchor}>{nav.zName}</a>
+                              </div>
+                          </Menu.Item>
+                      ))
+                  }
+              </Menu>
+          </div>
       </div>
     );
   }

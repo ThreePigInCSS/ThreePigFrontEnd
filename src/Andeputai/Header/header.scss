@@ -18,7 +18,8 @@ body {
 .logo {
   width: 9rem;
   height: 2.125rem;
-  margin: 0.5rem 0 0 23.625rem;
+/*  margin: 0.5rem 0 0 23.625rem;*/
+  margin-top: 0.5rem;
   float: left;
 
   img {
@@ -101,6 +102,13 @@ body {
   width: 100%;
   height: $header-height;
   z-index: 999;
+  background-color: #001529;
+  .header_container {
+    display: flex;
+    width: 60%;
+    margin: auto;
+    justify-content: space-around;
+  }
 }
 
 @media only screen and (max-width: 768px) {
