@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Icon } from 'antd';
+import { Menu } from 'antd';
 import { detectmob } from '../../utils/utils.js'
 import './header.scss';
 import logo from '../static/logo.png';
@@ -41,7 +41,7 @@ class Header extends Component {
       },
       {
         name: 'Dynamic',
-        anchor: '#cooperation',
+        anchor: '#dynamic',
         zName: '企业动态',
       },
     ];
@@ -54,12 +54,15 @@ class Header extends Component {
 
   findVisibleContent = () => {
     this.navList.forEach(nav => {
-      const rect = document.querySelector(nav.anchor).getBoundingClientRect(),
-        {top} =  rect;
-      if(Math.abs(top) < 150) {
-        this.setState({
-          current: nav.name,
-        });
+      const element = document.querySelector(nav.anchor);
+        if(element) {
+          const rect = element.getBoundingClientRect(),
+          {top} =  rect;
+        if(Math.abs(top) < 150) {
+          this.setState({
+            current: nav.name,
+          });
+        }
       }
     });
   }
@@ -75,7 +78,10 @@ class Header extends Component {
   }
 
   onMouseWheel(event) {
-    this.findVisibleContent();
+    if(!this.state.clickHeader) {
+      this.findVisibleContent();
+    }
+    
     if(detectmob()) {
       this.acc(event);
     }
@@ -89,7 +95,12 @@ class Header extends Component {
     const handleClick = (e) => {
       this.setState({
         current: e.key,
+        clickHeader: true,
       });
+
+      setTimeout(() => {
+        this.state.clickHeader = false;
+      }, 1000);
     }
     return(
       <div className="pc-home">
@@ -121,6 +132,8 @@ class Header extends Component {
                   }
               </Menu>
           </div>
+
+          <div className="header-shadow" />
       </div>
     );
   }
@@ -175,7 +188,8 @@ class Header extends Component {
             </p>
           </div>
         </div>
-
+        
+        <div className="header-shadow" />
       </div>
     );
   }
