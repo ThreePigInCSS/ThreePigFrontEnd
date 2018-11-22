@@ -71,13 +71,15 @@ class Header extends Component {
   // < 0 down
   acc(event) {
     const dir = window.pageYOffset - this.state.lastY > 0;
-    this.state.lastY =window.pageYOffset;
+    this.state.lastY = window.pageYOffset;
+    
+    
     this.setState({
       dir,
     });
   }
 
-  onMouseWheel(event) {
+  onMouseWheel(event) {  
     if(!this.state.clickHeader) {
       this.findVisibleContent();
     }
@@ -93,9 +95,10 @@ class Header extends Component {
     const {current} = this.state;
 
     const handleClick = (e) => {
+      this.state.clickHeader =  true;
       this.setState({
         current: e.key,
-        clickHeader: true,
+        // clickHeader: true,
       });
 
       setTimeout(() => {
@@ -161,8 +164,11 @@ class Header extends Component {
           <div className="menu-btn" onClick={toggleCollapsed}>
             <img src={collapsed ? btnS : btnO} className={collapsed ? 'active' : ''} alt="img" />
           </div>
+
+          {collapsed ? <div className="header-shadow" /> : null}
         </div>
 
+     
         <div className={'menu-content ' + (collapsed ? 'content-hide' : 'content-show') }
         >
           <Menu
@@ -189,7 +195,6 @@ class Header extends Component {
           </div>
         </div>
         
-        <div className="header-shadow" />
       </div>
     );
   }

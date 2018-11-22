@@ -2,6 +2,16 @@ $hover-bg-color: #052565;
 $active-bg-color: #05256B;
 $btn-bg-color: #00b7ee;
 
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .bellows {
   display: flex;
   flex-flow: row wrap;
@@ -35,6 +45,10 @@ $btn-bg-color: #00b7ee;
       height: 100%;
     }
 
+    .active-des {
+      animation: fade 1s ease-in;
+    }
+
     .description {
       position: absolute;
       top: 610px;
@@ -45,6 +59,13 @@ $btn-bg-color: #00b7ee;
       color: white;
       overflow: hidden;
       text-overflow: ellipsis;
+
+      
+
+      p {
+        text-align: left;
+      
+      }
     }
   }
 

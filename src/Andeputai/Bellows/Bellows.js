@@ -181,7 +181,7 @@ class Bellows extends Component {
         <div  key={menu.enName} className={"piece-bg " + (menu.active ? 'active-bg' : 'static-bg')}>
           <img  src={menu.bgImgBig} alt="pic" />
 
-          <div className="description">
+          <div className={"description " + (menu.active ? 'active-des' : '')}>
             <p ref={(ref) => setHtml(ref, menu.text[0])} />
             <p ref={(ref) => setHtml(ref, menu.text[1])} />
           </div>
@@ -209,7 +209,13 @@ class Bellows extends Component {
                 className={"piece-top-layer" + (menu.active ? ' layer-active' : '')}
               >
                 <p>{menu.name}</p>
-                <p>{menu.enName}</p>
+                <p style={
+                    menu.name.length > 6 ?
+                      {padding: `0 calc(50% - ${8 * 1.4 * 11}px)`} :
+                      null
+                  }>
+                  {menu.enName}
+                </p>
                 {menu.active && <div className="learn-more"><Button>{learnMore}</Button></div>}
                 {menu.active && <div className="btn-back" onClick={back.bind(this, index)} />}
               
