@@ -28,8 +28,11 @@ export default class CarouselIndex extends PureComponent{
                <div className="connect_wrap">
                    <div className="connect_box">
                        <div className="connect_info" style={{ width: beLeft ? '80%' : '100%' }}>
-                           <div>
+                           <div style={{marginBottom: 5}}>
                                <div className="be_flex"><div className="connect_title" style={{ flex: beLeft ? '' : 'auto', marginLeft: beLeft ? '10%' : 0 }}>安德普泰医疗科技</div></div>
+                           </div>
+                           <div>
+                               <div className="be_flex"><div className="connect_content connect_abstract" style={{ flex: beLeft ? '' : 'auto', marginLeft: beLeft ? '10%' : 0 }}>中国装备协会皮肤病与皮肤美容专业委员会常务委员单位&nbsp;&nbsp;/&nbsp;&nbsp;北京中西医结合学会医学美容专业委员会企业委员单位</div></div>
                            </div>
                            <div>
                                <div className="be_flex"><div className="connect_content" style={{ flex: beLeft ? '' : 'auto', marginLeft: beLeft ? '10%' : 0 }}>北京安德普泰医疗科技有限公司由医学专业背景联合创始人团队建立于2011年，注重医学科技研发、管理及市场转化。</div></div>
@@ -41,16 +44,13 @@ export default class CarouselIndex extends PureComponent{
                                <div className="be_flex"><div className="connect_content" style={{ flex: beLeft ? '' : 'auto', marginLeft: beLeft ? '10%' : 0 }}>与国内外科研机构、企业一并努力制定跨界医学解决方案，为优质有效的医学技术进行产品化。为造福人类文明社会尽献全力。</div></div>
                            </div>
                            <div>
-                               <div className="be_flex"><div className="connect_content" style={{ flex: beLeft ? '' : 'auto', marginLeft: beLeft ? '10%' : 0 }}>中国装备协会皮肤病与皮肤美容专业委员会常务委员单位</div></div>
-                               <div className="be_flex"><div className="connect_content" style={{ flex: beLeft ? '' : 'auto', marginLeft: beLeft ? '10%' : 0 }}>北京中西医结合学会医学美容专业委员会企业委员单位</div></div>
-                           </div>
-                           <div>
                                <div className="be_flex"><div className="connect_btn" style={{ flex: beLeft ? '' : 'auto', marginLeft: beLeft ? '10%' : 0 }}><a onClick={this.connect}>联系我们了解更多信息</a></div></div>
                            </div>
                        </div>
                        <div className="connect_address" style={{ right: beLeft ? 0 : '-20%' }}>
                            <div className="cover" />
                            <div className="detail">
+                               <img src={require("../static/address.jpg")} />
                                <span className="back" onClick={this.back} />
                                <div className="info">
                                    北京市大兴区中关村科技园区 <br/>

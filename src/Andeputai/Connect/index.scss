@@ -21,7 +21,7 @@
       flex-direction: column;
       justify-content: center;
       &>div {
-        margin: 38px 0;
+        margin-bottom: 50px;
       }
       .be_flex {
         display: flex;
@@ -41,6 +41,10 @@
         line-height: 30px;
         font-size: 16px;
         color: #464646;
+        &.connect_abstract {
+          font-size: 16px;
+          color: #0087CE;
+        }
       }
       .connect_btn a {
         background: #0087CE;
@@ -50,6 +54,10 @@
         line-height: 42px;
         display: inline-block;
         border-radius: 5px;
+        transition: background-color 0.6s;
+        &:hover {
+          background: #052565;
+        }
       }
     }
     .connect_address {
@@ -59,18 +67,16 @@
       right: -20%;
       height: 100%;
       width: 20%;
-      background: blue;
-      background: url('./../static/bellows-02.jpg') no-repeat center center;
-      background-size: cover;
-      .cover {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: #052565;
-        opacity: 0.57;
-      }
+      background: #052565;
+      //.cover {
+      //  position: absolute;
+      //  top: 0;
+      //  left: 0;
+      //  right: 0;
+      //  bottom: 0;
+      //  background: #052565;
+      //  opacity: 0.57;
+      //}
       .detail {
         //height: 156px;
         position: absolute;
@@ -81,10 +87,15 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        img {
+          width: 90%;
+          margin-bottom: 48px;
+        }
         .back {
           display: inline-block;
           width: 29px;
           height: 29px;
+          margin-bottom: 48px;
           background: #00b7ee url('../static/back.png') no-repeat center center;
           border-radius: 50%;
           cursor: pointer;
