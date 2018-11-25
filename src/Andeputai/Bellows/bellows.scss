@@ -51,7 +51,7 @@ $btn-bg-color: #00b7ee;
 
     .description {
       position: absolute;
-      top: 610px;
+      bottom: 223px;
       right: 125px;
       width: 688px;
       height: 169px;
@@ -73,14 +73,14 @@ $btn-bg-color: #00b7ee;
 
   .active-bg {
     width: 100%;
-    height: 64.375rem;
+    height: 100%;
     transition: width .4s ease;
   }
 
 
   .static-bg {
     width: 0%;
-    height: 64.375rem;
+    height: 100%;
     transition: width .4s ease;
 
     .description {
@@ -187,7 +187,6 @@ $btn-bg-color: #00b7ee;
       }
 
       .content {
-        height: 140px;
         text-align: left;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -217,9 +216,131 @@ $btn-bg-color: #00b7ee;
         bottom: 6px;
         width: 15px;
         height: 15px;
-        background: no-repeat center center;
+        background-repeat: no-repeat;
         background-size: 100% 100%;
         border-radius: 50%;
+      }
+    }
+  }
+}
+
+.study-news {
+  margin-top: 33px; 
+    .tag {
+      width: 29px;
+      height: 11px;
+      background-image: url(../static/news.png);
+      background-size: 100% 100%;
+      margin-bottom: 9px; 
+    }
+
+    .title {
+      display: flex;
+      font-size: 12px;
+      border-bottom: 1px solid rgba(220,220,220,1);
+
+      p {
+        margin: 0;
+      }
+
+      .title-name {
+        flex: 1;
+        a {
+          color: #3E3E3E;
+          font-weight: 300;
+          font-family: MicrosoftYaHeiLight;
+        }
+      }
+
+      .date {
+        width: 77px;
+      }
+    }
+}
+
+
+
+.research {
+  .research-news + .research-news {
+    border-top: 1px solid #DCDCDC ;
+  }
+
+  .research-news {
+    .title {
+      margin-top: 11px;
+      display: flex;
+
+      .icon {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background-image: url(../static/point.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+
+      .title-name {
+        margin-left: 11px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 11px;
+        line-height: 11px;
+
+         a {
+          color:rgba(85,85,85,1);
+          font-family:PingFang-SC-Regular;
+          font-weight:400;
+         }
+      }
+    }
+  }
+}
+
+.solution {
+  .solution-news + .solution-news {
+    margin-top: 60px;
+  }
+
+  .solution-news {
+    .img {
+      width: 100%;
+      padding-top: 100%;
+      background-size: 100% 100%;
+    }
+
+    .title {
+      padding: 21px 9px;
+      background-color: #F5F5F5;
+
+      .title-name {
+        font-size: 15px;
+        font-family: MicrosoftYaHeiLight;
+        font-weight: 300;
+        color:#3E3E3E;
+        line-height: 16px;
+      }
+
+      .title-des {
+        font-size: 9px;
+        font-family: MicrosoftYaHeiLight;
+        font-weight: 300;
+        color:rgba(136,136,136,1);
+        line-height: 15px;
+      }
+
+      .title-web {
+        text-align: right;
+        margin: 0;
+        a {
+          display: inline-block;
+          padding: 2px 8px;
+          background:rgba(0,183,238,1);
+          border-radius:4px;
+          color: white;
+          font-size: 9px;
+          font-weight:400;
+        }
       }
     }
   }
@@ -243,10 +364,12 @@ $btn-bg-color: #00b7ee;
       transition: height .4s linear;
     }
 
-    .piece-active {
-      height: 354px;
+    .content-active {
+      height: 0;
       transition: height .4s linear;
     }
+
+
   }
 }
 
