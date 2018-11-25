@@ -3,7 +3,7 @@
   padding-top: 56.25%;
   position: relative;
   background: no-repeat center center;
-  background-size: 100% 100%;
+  background-size: cover;
   .info-box {
     position: absolute;
     top: 0;
@@ -17,12 +17,18 @@
       font-size: 50px;
       text-align: center;
       margin-top: 18%;
+      &.info-mobile {
+        display: none;
+      }
     }
     .infoEN {
       font-size: 34px;
       margin-top: 25px;
       text-align: center;
       font-weight: 300;
+      &.infoEN-mobile {
+        display: none;
+      }
     }
   }
 }
@@ -33,11 +39,20 @@
     .info-box {
       .info {
         font-size: 2.375rem;
+        display: none;
+        margin-top: 25%;
+        &.info-mobile {
+          display: block;
+        }
       }
       .infoEN {
         font-size: 1.25rem;
         margin-top: 2.0625rem;
         text-align: center;
+        display: none;
+        &.infoEN-mobile {
+          display: block;
+        }
       }
     }
   }
