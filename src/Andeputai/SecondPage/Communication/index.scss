@@ -1,0 +1,68 @@
+.communication {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 800;
+  background: #fff url('../../static/communication.jpg') no-repeat;
+  background-size: contain;
+  .content-box {
+    width: 840px;
+    margin: 134px auto 0;
+    text-align: left;
+    .back {
+      display: inline-block;
+      width: 29px;
+      height: 29px;
+      margin-bottom: 35px;
+      background: #00b7ee url('../../static/back.png') no-repeat center center;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .title {
+      color: #05256B;
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 25px;
+    }
+    .comm_item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 111px;
+      border-bottom: 1px solid #DCDCDC;
+      .news {
+        position: absolute;
+        top: 45%;
+        left: 0;
+        width: 44px;
+        height: 17px;
+        line-height: 17px;
+        text-align: center;
+        font-size: 13px;
+        background: #0087CE;
+        border-radius: 3px;
+        color: #fff;
+      }
+      .info-detail {
+        height: 47px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 18px;
+        color: #3E3E3E;
+        .year {
+          width: 150px;
+          color: #05256B;
+          font-size: 28px;
+          .date {
+            color: #0087C3;
+          }
+        }
+      }
+    }
+  }
+}

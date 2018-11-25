@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.scss';
 import 'antd/dist/antd.css';
-import {Header, Bellows, Footer, Footer2, Carousel, Connect} from './Andeputai';
+import {Header, Bellows, Footer, Footer2, Carousel, Connect, Communication} from './Andeputai';
 
 document.title = '安德普泰医疗科技';
 class App extends Component {
@@ -13,6 +13,9 @@ class App extends Component {
                  <Connect/>
                 <Bellows />
                 <Footer2/>
+                <div data-alt="二级页面存放处">
+                    <Communication/>
+                </div>
             </div>
         );
     }

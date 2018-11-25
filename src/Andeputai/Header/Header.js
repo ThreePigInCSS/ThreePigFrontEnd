@@ -95,6 +95,12 @@ class Header extends Component {
     const {current} = this.state;
 
     const handleClick = (e) => {
+        // 在二级页面中点击标题
+        document.querySelector('.second-page').style.display = 'none';
+        document.body.style.overflow = 'auto';
+        // 如果标题是news
+        // todo: 单独处理
+        
       this.state.clickHeader =  true;
       this.setState({
         current: e.key,

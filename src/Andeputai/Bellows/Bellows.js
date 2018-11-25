@@ -35,6 +35,7 @@ class Bellows extends Component {
         bgImg: b01,
         anchor: '#',
         onClick: true,
+        hasDetail: ".communication.second-page",    // 用于二级页面
         text: [
           '每年参加各级专业学术会议<big>30余场</big> 与中华医学会皮肤与性病学专业委员会、中国中西医结合学会皮肤病与性病学专业委员会、中国医师协会皮肤科医师委员会、中国整形美容协会等国家级及省级皮肤科专业学会保持着常态化沟通。与众多知名专家开展学术研究并发表专业论文。',
           'Attend more than 30 professional academic conferences every year. Carry out academic research with many well-known experts and publish professional papers.'
@@ -61,6 +62,7 @@ class Bellows extends Component {
         bgImg: b03,
         anchor: '#',
         onClick: true,
+        hasDetail: ".communication.second-page",    // 用于二级页面
         footer: true,
         text: [
           '根据临床治疗需求，结合科研院所新技术成果，与多所大学及研究机构联合研发合作',
@@ -87,6 +89,7 @@ class Bellows extends Component {
         bgImg: b05,
         anchor: '#',
         onClick: true,
+        hasDetail: ".communication.second-page",    // 用于二级页面
         footer: true,
         id: 'solution',
         text: [
@@ -103,6 +106,11 @@ class Bellows extends Component {
     }
   }
 
+    // 显示二级页面
+    showDetail = (slt) => {
+    document.querySelector(slt).style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    };
 
   createStudyContent() {
     let content = [
@@ -332,7 +340,7 @@ class Bellows extends Component {
         });
       }
 
-      
+
     };
 
     const contentBack = (index, ev) => {
@@ -465,7 +473,7 @@ class Bellows extends Component {
                   }>
                   {menu.enName}
                 </p>
-                {menu.active && <div className="learn-more"><Button>{learnMore}</Button></div>}
+                {menu.active && menu.hasDetail && <div className="learn-more"><Button onClick={() => {this.showDetail(menu.hasDetail);}}>{learnMore}</Button></div>}
                
               
               </div>
