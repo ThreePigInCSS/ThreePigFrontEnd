@@ -26,7 +26,6 @@ body {
 .logo {
   width: 9rem;
   height: 2.125rem;
-/*  margin: 0.5rem 0 0 23.625rem;*/
   margin-top: 0.5rem;
   float: left;
 
@@ -162,11 +161,8 @@ body {
       a {
         text-align: left;
         height: 100%;
+        width: 290px;
         img {
-          // position: absolute;
-          // left: $mob-margin-left;
-          // top: $mob-margin-top;
-          // height: $mob-logo-height;
           height: 100%;
         }
       }
@@ -197,5 +193,6 @@ body {
 
   a {
     height: 2rem;
+    width: 8.47rem;
   }
 }

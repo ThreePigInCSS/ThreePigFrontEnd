@@ -114,7 +114,13 @@ class Bellows extends Component {
           className="piece"
           key={menu.enName}
         >
-          <div className="img-wrapper" style={{backgroundImage: `url(${menu.bgImgBig})`}}>
+          <div className="img-wrapper" style={{
+              backgroundImage: `url(${menu.bgImgBig})`,
+              paddingTop: '35.73%',
+              height: 'auto',
+              width: 'auto',
+            }}
+          >
             <div style={{backgroundColor: `rgba(${hex}, ${hex}, ${hex})`,}} 
               className={"piece-top-layer" + (menu.active ? ' layer-active' : '')}
             >
@@ -198,8 +204,7 @@ class Bellows extends Component {
           >
             <div className="img-wrapper"
               style={{
-                paddingTop: 0,
-                height: '100%',
+                paddingTop: '268.22%',
                 backgroundImage: !menu.active ? `url(${menu.bgImg})` : null
               }}
             >
@@ -208,6 +213,7 @@ class Bellows extends Component {
                 }} 
                 className={"piece-top-layer" + (menu.active ? ' layer-active' : '')}
               >
+                 {menu.active && <div className="btn-back" onClick={back.bind(this, index)} />}
                 <p>{menu.name}</p>
                 <p style={
                     menu.name.length > 6 ?
@@ -217,7 +223,7 @@ class Bellows extends Component {
                   {menu.enName}
                 </p>
                 {menu.active && <div className="learn-more"><Button>{learnMore}</Button></div>}
-                {menu.active && <div className="btn-back" onClick={back.bind(this, index)} />}
+               
               
               </div>
             </div>

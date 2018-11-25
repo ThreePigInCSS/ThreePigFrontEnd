@@ -55,16 +55,18 @@ $btn-bg-color: #00b7ee;
       right: 125px;
       width: 688px;
       height: 169px;
+      padding: 19px 19px 14px 13.5px;
 
       color: white;
       overflow: hidden;
       text-overflow: ellipsis;
 
-      
+      background:rgba(8,39,106, .15);
 
+      
+      
       p {
         text-align: left;
-      
       }
     }
   }
@@ -92,7 +94,7 @@ $btn-bg-color: #00b7ee;
     .img-wrapper {
       position: relative;
       width: 100%;
-      padding-top: 35.7%;
+      height: 100%;
       background: no-repeat center center;
       background-size: 100% 100%;
 
@@ -146,14 +148,13 @@ $btn-bg-color: #00b7ee;
 
     .btn-back {
       cursor: pointer;
-      position: absolute;
       color: white;
       background-color: $btn-bg-color;
       background-image: url(../static/back.png);
       width: 1.8rem;
       height: 1.8rem;
-      top: 2.3rem;
-      left: 2.3rem;
+      margin-left: calc(50% - .9rem);
+      margin-bottom: 21px;
       border-radius: 50%;
     }
 
@@ -226,15 +227,12 @@ $btn-bg-color: #00b7ee;
 
 .piece {
   width: 20%;
-  height: 64.375rem;
   transition: width .4s ease;
 }
 
 @media only screen and (max-width: 800px) {
   .piece {
     width: 100%;
-    height: auto;
-    
 
     .piece-top-layer {
       font-size: 16px !important;
