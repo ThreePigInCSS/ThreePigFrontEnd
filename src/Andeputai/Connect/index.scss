@@ -151,8 +151,8 @@
       right: 0;
       position: absolute;
       display: flex;
-      background: url('./../static/bellows-02.jpg') no-repeat center center;
-      background-size: cover;
+      background: #052565 url('./../static/address.jpg') no-repeat center 0;
+      background-size: 90% 60%;
       flex-direction: column;
       justify-content: flex-end;
       align-items: center;
@@ -174,15 +174,15 @@
         color: #fff;
         margin-bottom: 3.5rem;
       }
-      .connect_bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: #052565;
-        opacity: 0.88;
-      }
+      //.connect_bg {
+      //  position: absolute;
+      //  top: 0;
+      //  left: 0;
+      //  right: 0;
+      //  bottom: 0;
+      //  background: #052565;
+      //  opacity: 0.88;
+      //}
     }
   }
 }

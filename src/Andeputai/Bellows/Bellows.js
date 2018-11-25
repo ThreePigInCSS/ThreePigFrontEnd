@@ -447,7 +447,7 @@ class Bellows extends Component {
           >
             <div className="img-wrapper"
               style={{
-                paddingTop: '268.22%',
+                paddingTop: '280%',
                 backgroundImage: !menu.active ? `url(${menu.bgImg})` : null
               }}
             >
