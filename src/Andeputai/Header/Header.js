@@ -40,7 +40,7 @@ class Header extends Component {
         zName: '合作',
       },
       {
-        name: 'Dynamic',
+        name: 'News',
         anchor: '#dynamic',
         zName: '企业动态',
       },
