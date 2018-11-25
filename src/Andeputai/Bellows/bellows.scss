@@ -94,7 +94,7 @@ $btn-bg-color: #00b7ee;
       width: 100%;
       padding-top: 35.7%;
       background: no-repeat center center;
-      background-size: 100% 100%;
+      background-size: cover;
 
       .piece-top-layer {
         &:hover {
@@ -217,7 +217,7 @@ $btn-bg-color: #00b7ee;
         width: 15px;
         height: 15px;
         background: no-repeat center center;
-        background-size: 100% 100%;
+        background-size: cover;
         border-radius: 50%;
       }
     }

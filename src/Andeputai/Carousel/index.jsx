@@ -21,6 +21,17 @@ export default class CarouselIndex extends PureComponent{
                                     <div className="info-box">
                                         <div className="info">{item.info}</div>
                                         <div className="infoEN">{item.infoEN}</div>
+                                        <div className="info info-mobile">
+                                            <div>全球化探索</div>
+                                            <div>医学创新理念</div>
+                                            <div>及应用技术</div>
+                                        </div>
+                                        <div className="infoEN infoEN-mobile">
+                                            <div>Globalization explores</div>
+                                            <div>innovative ideas</div>
+                                            <div>and applied technologies</div>
+                                            <div>in medicine</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
