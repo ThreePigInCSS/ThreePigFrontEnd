@@ -96,7 +96,10 @@ class Header extends Component {
 
     const handleClick = (e) => {
         // 在二级页面中点击标题
-        document.querySelector('.second-page').style.display = 'none';
+        let eleList = document.querySelectorAll('.second-page');
+        for (let i = 0; i < eleList.length; i++) {
+            eleList[i].style.display = 'none';
+        }
         document.body.style.overflow = 'auto';
         // 如果标题是news
         // todo: 单独处理
