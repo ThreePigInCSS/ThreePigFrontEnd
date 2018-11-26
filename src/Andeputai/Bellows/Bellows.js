@@ -85,11 +85,11 @@ class Bellows extends Component {
       },
       {
         name: '医学技术产品化解决方案',
-        enName: 'Medical tchnology productization solution',
+        enName: 'Medical technology productization solution',
         bgImg: b05,
         anchor: '#',
         onClick: true,
-        hasDetail: ".communication.second-page",    // 用于二级页面
+        hasDetail: ".solution.second-page",    // 用于二级页面
         footer: true,
         id: 'solution',
         text: [
