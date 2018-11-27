@@ -1,6 +1,6 @@
 $menu-bg-color: rgba(0, 0, 0, 0.85);
 $header-height: 3.125rem;
-$header-upheight: 2rem;
+$header-upheight: 60rem/16;
 $header-font-color: #EDEDED;
 $mob-height: 100rem/16;
 $mob-margin-top: 26rem/16;
@@ -148,7 +148,7 @@ body {
 
     .menu-title {
       height: $mob-height;
-      padding:$mob-margin-top $mob-margin-left ;
+      padding:0 $mob-margin-left ;
 
 
       .header-shadow  {
@@ -160,11 +160,11 @@ body {
       }
       a {
         text-align: left;
-        height: 100%;
-        width: 290px;
         img {
-          height: 100%;
-          width: auto;
+          height: 3rem;
+          width: 12.75rem;
+          transition: all .4s ease;
+          transform-origin: 0 center;
         }
       }
 
@@ -192,9 +192,7 @@ body {
 #up-animation {
   height: $header-upheight;
   transition: .4s ease;
-
-  a {
-    height: 2rem;
-    width: 8.47rem;
+  a img {
+    transform: scale(0.7);
   }
 }
