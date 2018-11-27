@@ -62,7 +62,7 @@ class Bellows extends Component {
         bgImg: b03,
         anchor: '#',
         onClick: true,
-        hasDetail: ".research.second-page",    // 用于二级页面
+        hasDetail: ".research2.second-page",    // 用于二级页面
         footer: true,
         text: [
           '根据临床治疗需求，结合科研院所新技术成果，与多所大学及研究机构联合研发合作',
