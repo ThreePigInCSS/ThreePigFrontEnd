@@ -67,6 +67,7 @@ class Research extends Component {
     return (
         <div className="research2 second-page">
             <div className="content-box">
+                <div className="back" onClick={this.back} />
                 <div className="title">医学课题研究 Medical research</div>
                 <div className="content">
                     {

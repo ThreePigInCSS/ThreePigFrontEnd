@@ -36,7 +36,7 @@ export default class CarouselIndex extends PureComponent{
     renderItem(item) {
         return (
             <div className="comm_item">
-                <span className="news">News</span>
+                <span className="news" />
                 <div className="info-detail">
                     <span>{item.title}</span>
                     <div className="year">{item.year}<span className="date">{item.date}</span></div>

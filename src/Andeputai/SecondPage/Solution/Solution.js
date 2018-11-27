@@ -9,13 +9,13 @@ let content = [
         img: ff1,
         name: '芙芙',
         title: '芙芙品牌诞生于安德普泰医疗科技实验室，最早是名为 "FULFIL" 的中国肌肤健康研究计划。该计划联合国内多家医院、研究所、专业机构于2016年启动至今，广泛收集肌肤健康数据用于成分研发与产品转化。',
-        href: ''
+        href: 'http://www.fulfil.com.cn/'
     },
     {
         img: ff2,
         name: '芙清',
         title: '芙清是针对痤疮类症状而研制的专项产品，用于辅助痤疮治疗。',
-        href: ''
+        href: 'http://www.fulfil.com.cn/'
     },
 ];
 
@@ -42,7 +42,7 @@ class Solution extends Component {
                         {item.title}
                     </p>
                     <p className="title-web">
-                        <a href={item.href}>前往官方网站</a>
+                        <a target="_blank" href={item.href}>前往官方网站</a>
                     </p>
                 </div>
             </div>
