@@ -35,6 +35,8 @@ class Bellows extends Component {
         bgImg: b01,
         anchor: '#',
         onClick: true,
+        footer: true,
+        hideMore: true,
         hasDetail: ".communication.second-page",    // 用于二级页面
         text: [
           '安德普泰医疗科技定期参加中国医学交流活动，与众多知名专家开展学术研究并发表专业论文。与国际医学机构保持常态化沟通。',
@@ -339,9 +341,9 @@ class Bellows extends Component {
           );
         });
       }
-
-
     };
+
+    window.clickPiece = clickPiece.bind(this);
 
     const contentBack = (index, ev) => {
       this.menuList[index].active = false;
@@ -357,6 +359,7 @@ class Bellows extends Component {
       <div onClick={clickPiece.bind(this, index)}
           className="piece"
           key={menu.enName}
+          id={menu.id}
         >
           <div className="img-wrapper" style={{
               backgroundImage: `url(${menu.bgImgBig})`,
@@ -375,7 +378,7 @@ class Bellows extends Component {
           </div>
           
           {
-            <div className={"content-container " + (menu.active ? 'content-active' : 'piece-static')}> 
+            <div  className={"content-container " + (menu.active ? 'content-active' : 'piece-static')}> 
                 <div className={"piece-content " + (menu.active ? 'piece-active' : '')} 
                 >
                   <div className="content-wrap">
@@ -387,9 +390,9 @@ class Bellows extends Component {
                     {this.switchContent(menu.id)}
 
                     {
-                      true ?
+                      menu.footer ?
                       <div className="buttons">
-                        <div className="btn-more" onClick={disableLimit}>
+                        <div className={"btn-more " + (menu.hideMore ? 'hide-more' : '')} onClick={disableLimit}>
                           {watchMore + ' '}>>
                         </div>
 

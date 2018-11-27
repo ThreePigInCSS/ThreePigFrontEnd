@@ -6,7 +6,7 @@ $mob-height: 100rem/16;
 $mob-margin-top: 26rem/16;
 $mob-margin-left: 20rem/16;
 $mob-logo-height: 48rem/16;
-$mob-btn-height: 32rem/16;
+$mob-btn-height: 2rem;
 $mob-btn-width: 1rem;
 $mob-btn-rigth: 20rem/16;
 
@@ -179,6 +179,7 @@ body {
         width: $mob-btn-width;
         height: $mob-btn-height;
       }
+
     }
   }
 

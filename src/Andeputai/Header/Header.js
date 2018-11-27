@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Menu } from 'antd';
-import { detectmob, isBottom } from '../../utils/utils.js'
+import { detectmob, isBottom, transitionHeight } from '../../utils/utils.js'
 import './header.scss';
 import logo from '../static/logo.png';
 import logoS from '../static/logoS.png';
@@ -41,7 +41,7 @@ class Header extends Component {
       },
       {
         name: 'News',
-        anchor: '#dynamic',
+        anchor: '#study',
         zName: '企业动态',
       },
     ];
@@ -167,11 +167,21 @@ class Header extends Component {
     if(dir !== 'static' ) {
       id = dir && collapsed ? 'up-animation' : 'down-animation';
     }
-    const toggleCollapsed = () => {
+    const toggleCollapsed = (e) => {
+      const key = e.key;
       this.setState({
         collapsed: !collapsed
+      }, () => {
+
+        setTimeout(() => {
+          if(key === 'News') {
+            window.clickPiece(0);
+          }
+        }, 600);
+       
       });
     };
+    
 
     return (
       <div className="menu" >
@@ -180,7 +190,7 @@ class Header extends Component {
             <img src={logoS} alt="img" />
           </a>
 
-          <div className="menu-btn" onClick={toggleCollapsed}>
+          <div className={"menu-btn " + (collapsed ? 'btnS' : '') } onClick={toggleCollapsed}>
             <img src={collapsed ? btnS : btnO} className={collapsed ? 'active' : ''} alt="img" />
           </div>
 
