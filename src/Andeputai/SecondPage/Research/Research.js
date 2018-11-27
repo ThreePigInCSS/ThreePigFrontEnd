@@ -47,7 +47,7 @@ class Research extends Component {
   }
 
     back = (slt) => {
-        document.querySelector('.research.second-page').style.display = 'none';
+        document.querySelector('.research2.second-page').style.display = 'none';
         document.body.style.overflow = 'auto';
     };
 
@@ -65,7 +65,7 @@ class Research extends Component {
 
   render() {
     return (
-        <div className="research second-page">
+        <div className="research2 second-page">
             <div className="content-box">
                 <div className="title">医学课题研究 Medical research</div>
                 <div className="content">
