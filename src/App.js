@@ -22,5 +22,9 @@ class App extends Component {
         );
     }
 }
-
+document.body.addEventListener('touchmove', function(evt) {
+    if(!evt._isScroller) {
+        evt.preventDefault();
+    }
+});
 export default App;
