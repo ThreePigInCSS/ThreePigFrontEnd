@@ -76,7 +76,7 @@ export default class CarouselIndex extends PureComponent{
                            <span className="connect_btn" onClick={this.connect}>联系我们了解更多信息</span>
                        </div>
                        <div className="connect_cover">
-                           <div className="connect_bg"></div>
+                           <img src={require("../static/address.jpg")} />
                            <span className="back" onClick={this.back} />
                            <div className="info">
                                <div>北京市大兴区中关村科技园区</div>

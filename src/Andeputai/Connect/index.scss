@@ -1,6 +1,6 @@
 #about-us {
   position: relative;
-  margin-top: -5px;
+  margin-top: -8px;
   z-index: 100;
   background: #fff;
 }
@@ -151,8 +151,7 @@
       right: 0;
       position: absolute;
       display: flex;
-      background: #052565 url('./../static/address.jpg') no-repeat center 0;
-      background-size: 90% 60%;
+      background: #052565;
       flex-direction: column;
       justify-content: flex-end;
       align-items: center;
@@ -165,6 +164,7 @@
         background: #00b7ee url('../static/back.png') no-repeat center center;
         border-radius: 50%;
         margin-bottom: 2rem;
+        margin-top: 1.5rem;
       }
       .info {
         position: relative;
@@ -174,15 +174,9 @@
         color: #fff;
         margin-bottom: 3.5rem;
       }
-      //.connect_bg {
-      //  position: absolute;
-      //  top: 0;
-      //  left: 0;
-      //  right: 0;
-      //  bottom: 0;
-      //  background: #052565;
-      //  opacity: 0.88;
-      //}
+      img {
+        width: 80%;
+      }
     }
   }
 }
