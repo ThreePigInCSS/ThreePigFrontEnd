@@ -77,13 +77,17 @@ class Header extends Component {
   // > 0 up 
   // < 0 down
   acc(event) {
-    const dir = window.pageYOffset - this.state.lastY > 0;
+    const distance = window.pageYOffset - this.state.lastY, 
+      dir = distance > 0;
     this.state.lastY = window.pageYOffset;
     
+    if(Math.abs(distance) > 10) {
+      this.setState({
+        dir,
+      });
+    }
     
-    this.setState({
-      dir,
-    });
+    
   }
 
   onMouseWheel(event) {  
