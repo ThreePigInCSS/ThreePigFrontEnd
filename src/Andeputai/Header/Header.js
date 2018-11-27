@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Menu } from 'antd';
-import { detectmob } from '../../utils/utils.js'
+import { detectmob, isBottom } from '../../utils/utils.js'
 import './header.scss';
 import logo from '../static/logo.png';
 import logoS from '../static/logoS.png';
@@ -63,8 +63,15 @@ class Header extends Component {
             current: nav.name,
           });
         }
+
       }
     });
+
+    if(isBottom()) {
+      this.setState({
+        current: 'Cooperation'
+      });
+    }
   }
 
   // > 0 up 

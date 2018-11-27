@@ -101,7 +101,9 @@ $btn-bg-color: #00b7ee;
       .piece-top-layer {
         &:hover {
           background: $hover-bg-color !important;
+          cursor: pointer;
         }
+        
         transition: background-color 0.6s;
         position: absolute;
         display: flex;
@@ -197,6 +199,7 @@ $btn-bg-color: #00b7ee;
 
 
       .buttons {
+        margin-top: 1rem;
         line-height: 25px;
         position: relative;
       }

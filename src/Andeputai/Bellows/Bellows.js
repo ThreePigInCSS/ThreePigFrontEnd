@@ -72,7 +72,7 @@ class Bellows extends Component {
         mobText: 'Established in 2011 by the co-founder team of medical professional background, Beijing UnderProved medical technology co., LTD focuses on the research and development, management and market transformation of medical technology. I have been focusing on skin health for 7 years, and working together with a professional consulting team composed of authoritative experts in pharmacy.',
       },
       {
-        name: '医学医用管理',
+        name: '医学应用管理',
         enName: 'Medical application management',
         bgImg: b04,
         anchor: '#',
@@ -140,9 +140,9 @@ class Bellows extends Component {
       },
     ];
 
-    // if(this.state.limit) {
-    //   content = content.slice(0, 1);
-    // }
+    if(this.state.limit) {
+      content = content.slice(0, 5);
+    }
 
     return (
       <div className="study">
@@ -240,18 +240,18 @@ class Bellows extends Component {
         img: ff1,
         name: '芙芙',
         title: '芙芙品牌诞生于安德普泰医疗科技实验室，最早是名为“FULFIL”的中国肌肤健康研究计划。该计划联合国内多家医院、研究所、专业机构于2016年启动至今，广泛收集肌肤健康数据用于成分研发与产品转化。',
-        href: ''
+        href: 'http://www.fulfil.com.cn'
       },
       {
         img: ff2,
         name: '芙清',
         title: '芙清是针对痤疮类症状而研制的专项产品，用于辅助痤疮治疗。',
-        href: ''
+        href: 'http://www.fulfil.com.cn'
       },
     ];
 
     if(this.state.limit) {
-      content = content.slice(0, 5);
+      content = content.slice(0, 1);
     }
 
     return (
@@ -387,7 +387,7 @@ class Bellows extends Component {
                     {this.switchContent(menu.id)}
 
                     {
-                      menu.footer ?
+                      true ?
                       <div className="buttons">
                         <div className="btn-more" onClick={disableLimit}>
                           {watchMore + ' '}>>
