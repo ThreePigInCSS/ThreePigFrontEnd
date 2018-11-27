@@ -44,7 +44,8 @@
         line-height: 17px;
         text-align: center;
         font-size: 13px;
-        background: #0087CE;
+        background: #0087CE url("../../static/news.png") no-repeat center center;
+        background-size: contain;
         border-radius: 3px;
         color: #fff;
       }
