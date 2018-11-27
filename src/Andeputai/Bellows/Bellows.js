@@ -37,8 +37,8 @@ class Bellows extends Component {
         onClick: true,
         hasDetail: ".communication.second-page",    // 用于二级页面
         text: [
-          '每年参加各级专业学术会议<big>30余场</big> 与中华医学会皮肤与性病学专业委员会、中国中西医结合学会皮肤病与性病学专业委员会、中国医师协会皮肤科医师委员会、中国整形美容协会等国家级及省级皮肤科专业学会保持着常态化沟通。与众多知名专家开展学术研究并发表专业论文。',
-          'Attend more than 30 professional academic conferences every year. Carry out academic research with many well-known experts and publish professional papers.'
+          '安德普泰医疗科技定期参加中国医学交流活动，与众多知名专家开展学术研究并发表专业论文。与国际医学机构保持常态化沟通。',
+          'UnderProved medical technology regularly participates in Chinese medical exchange activities, conducts academic research with many well-known experts and publishes professional papers. Maintain regular communication with international medical institutions..'
         ],
         bgImgBig: bb01,
         mobText: 'Established in 2011 by the co-founder team of medical professional background, Beijing UnderProved medical technology co., LTD focuses on the research and development, management and market transformation of medical technology. I have been focusing on skin health for 7 years, and working together with a professional consulting team composed of authoritative experts in pharmacy.',
@@ -49,8 +49,8 @@ class Bellows extends Component {
         bgImg: b02,
         anchor: '#',
         text: [
-          '每年参加各级专业学术会议<big>30余场</big> 与中华医学会皮肤与性病学专业委员会、中国中西医结合学会皮肤病与性病学专业委员会、中国医师协会皮肤科医师委员会、中国整形美容协会等国家级及省级皮肤科专业学会保持着常态化沟通。与众多知名专家开展学术研究并发表专业论文。',
-          'Attend more than 30 professional academic conferences every year. Carry out academic research with many well-known experts and publish professional papers.'
+          '多年医学领域经验使我们更熟悉临床数据与使用者数据，这些数据将引导我们的研究方向。',
+          'Years of experience in the medical field has made us more familiar with clinical data and user data, which will guide our research direction. '
         ],
         bgImgBig: bb02,
         mobText: 'Established in 2011 by the co-founder team of medical professional background, Beijing UnderProved medical technology co., LTD focuses on the research and development, management and market transformation of medical technology. I have been focusing on skin health for 7 years, and working together with a professional consulting team composed of authoritative experts in pharmacy.',
@@ -65,8 +65,8 @@ class Bellows extends Component {
         hasDetail: ".research2.second-page",    // 用于二级页面
         footer: true,
         text: [
-          '根据临床治疗需求，结合科研院所新技术成果，与多所大学及研究机构联合研发合作',
-          'According to clinical treatment needs, in combination with the new technological achievements of the research institutes, we cooperate with a number of universities and research institutes for joint research and development',
+          '与合作机构建立联合研究机制，关注时下最新研究方向，持续更新肌肤领域创新理念，对未知医学领域进行探索研究。',
+          'Establish joint research mechanism with cooperative institutions, pay attention to the latest research direction, continuously update innovative ideas in skin field, and explore and study unknown medical fields. ',
         ],
         bgImgBig: bb03,
         mobText: 'Established in 2011 by the co-founder team of medical professional background, Beijing UnderProved medical technology co., LTD focuses on the research and development, management and market transformation of medical technology. I have been focusing on skin health for 7 years, and working together with a professional consulting team composed of authoritative experts in pharmacy.',
@@ -77,8 +77,8 @@ class Bellows extends Component {
         bgImg: b04,
         anchor: '#',
         text: [
-          '每年参加各级专业学术会议<big>30余场</big> 与中华医学会皮肤与性病学专业委员会、中国中西医结合学会皮肤病与性病学专业委员会、中国医师协会皮肤科医师委员会、中国整形美容协会等国家级及省级皮肤科专业学会保持着常态化沟通。与众多知名专家开展学术研究并发表专业论文。',
-          'Attend more than 30 professional academic conferences every year. Carry out academic research with many well-known experts and publish professional papers.'
+          '全球化发掘具备应用可能性的医学技术、设备、材料、原料，并对其知识产权进行归集，用于行业共享及二次研发。',
+          'Globalization explores medical technologies, equipment, materials and raw materials with application possibilities, and collects their intellectual property rights for industry sharing and secondary research and development. '
         ],
         bgImgBig: bb04,
         mobText: 'Established in 2011 by the co-founder team of medical professional background, Beijing UnderProved medical technology co., LTD focuses on the research and development, management and market transformation of medical technology. I have been focusing on skin health for 7 years, and working together with a professional consulting team composed of authoritative experts in pharmacy.',
@@ -93,8 +93,8 @@ class Bellows extends Component {
         footer: true,
         id: 'solution',
         text: [
-          '每年参加各级专业学术会议<big>30余场</big> 与中华医学会皮肤与性病学专业委员会、中国中西医结合学会皮肤病与性病学专业委员会、中国医师协会皮肤科医师委员会、中国整形美容协会等国家级及省级皮肤科专业学会保持着常态化沟通。与众多知名专家开展学术研究并发表专业论文。',
-          'Attend more than 30 professional academic conferences every year. Carry out academic research with many well-known experts and publish professional papers.'
+          '整合基础医学资源进行多样优化组合，创造符合各方使用需求的医学产品。如何成功实现量产需要目标数据、专业技能以及实验室论证等必要执行经验。',
+          'Integrate basic medical resources for diversified optimization and combination to create medical products that meet the needs of all parties. How to achieve mass production successfully requires target data, professional skills and necessary execution experience such as laboratory demonstration. '
         ],
         bgImgBig: bb05,
         mobText: 'Established in 2011 by the co-founder team of medical professional background, Beijing UnderProved medical technology co., LTD focuses on the research and development, management and market transformation of medical technology. I have been focusing on skin health for 7 years, and working together with a professional consulting team composed of authoritative experts in pharmacy.',
