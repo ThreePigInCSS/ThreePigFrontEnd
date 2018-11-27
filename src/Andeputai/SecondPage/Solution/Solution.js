@@ -8,7 +8,7 @@ let content = [
     {
         img: ff1,
         name: '芙芙',
-        title: '芙芙品牌诞生于安德普泰医疗科技实验室，最早是名为“FULFIL”的中国肌肤健康研究计划。该计划联合国内多家医院、研究所、专业机构于2016年启动至今，广泛收集肌肤健康数据用于成分研发与产品转化。',
+        title: '芙芙品牌诞生于安德普泰医疗科技实验室，最早是名为 "FULFIL" 的中国肌肤健康研究计划。该计划联合国内多家医院、研究所、专业机构于2016年启动至今，广泛收集肌肤健康数据用于成分研发与产品转化。',
         href: ''
     },
     {
@@ -26,7 +26,7 @@ class Solution extends Component {
   }
 
     back = (slt) => {
-        document.querySelector('.solution.second-page').style.display = 'none';
+        document.querySelector('.solutions.second-page').style.display = 'none';
         document.body.style.overflow = 'auto';
     };
 
@@ -52,7 +52,7 @@ class Solution extends Component {
 
   render() {
     return (
-        <div className="solution second-page">
+        <div className="solutions second-page">
             <div className="content-box">
                 <div className="back" onClick={this.back} />
                 <div className="title">医学技术产品化解决方案 Medical technology productization solution</div>

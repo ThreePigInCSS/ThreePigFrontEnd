@@ -89,7 +89,7 @@ class Bellows extends Component {
         bgImg: b05,
         anchor: '#',
         onClick: true,
-        hasDetail: ".solution.second-page",    // 用于二级页面
+        hasDetail: ".solutions.second-page",    // 用于二级页面
         footer: true,
         id: 'solution',
         text: [

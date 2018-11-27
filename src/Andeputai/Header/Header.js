@@ -103,8 +103,11 @@ class Header extends Component {
         document.body.style.overflow = 'auto';
         // 如果标题是news
         // todo: 单独处理
-        
-      this.state.clickHeader =  true;
+        if(e.key === 'News') {
+            document.querySelector('.communication.second-page').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        this.state.clickHeader =  true;
       this.setState({
         current: e.key,
         // clickHeader: true,

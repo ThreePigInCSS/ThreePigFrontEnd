@@ -1,4 +1,4 @@
-.solution {
+.solutions {
   display: none;
   overflow: auto;
   position: fixed;
@@ -13,52 +13,65 @@
     width: 840px;
     margin: 134px auto 0;
     text-align: left;
+    padding-bottom: 35px;
     .back {
       display: inline-block;
       width: 29px;
       height: 29px;
+      margin-bottom: 35px;
       background: #00b7ee url('../../static/back.png') no-repeat center center;
       border-radius: 50%;
       cursor: pointer;
     }
     .title {
       color: #05256B;
-      font-size: 28px;
+      font-size: 27px;
       font-weight: 400;
-      margin-bottom: 25px;
     }
 
     .solution-news {
       margin-top: 60px;
+      display: flex;
+      height: 276px;
+      border-radius: 10px;
+      overflow: hidden;
       .img {
-
-        padding-top: 100%;
-        background-size: 100% 100%;
+        height: 276px;
+        width: 267px;
+        flex: none;
+        background: no-repeat center center;
+        background-size: cover;
       }
 
       .title {
-        padding: 21px 9px;
+        padding: 44px 40px 0 35px;
         background-color: #F5F5F5;
-
+        flex: 1;
+        position: relative;
+        text-align: justify;
         .title-name {
-          font-size: 15px;
+          font-size: 30px;
           font-family: MicrosoftYaHeiLight;
           font-weight: 300;
           color: #3E3E3E;
           line-height: 16px;
+          margin-bottom: 22px;
         }
 
         .title-des {
-          font-size: 9px;
+          font-size: 18px;
           font-family: MicrosoftYaHeiLight;
           font-weight: 300;
           color: rgba(136, 136, 136, 1);
-          line-height: 15px;
+          line-height: 29px;
         }
 
         .title-web {
           text-align: right;
           margin: 0;
+          position: absolute;
+          right: 39px;
+          bottom: 30px;
           a {
             display: inline-block;
             padding: 2px 8px;
