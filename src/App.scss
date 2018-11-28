@@ -1,12 +1,14 @@
 html, body {
   font-size: 16px;
   scroll-behavior: smooth;
+  touch-action: manipulation;
 }
 
 .App {
   text-align: center;
   background: #fff;
 }
+
 
 .second-page {
   padding-bottom: 60px;
