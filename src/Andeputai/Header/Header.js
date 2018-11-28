@@ -81,21 +81,38 @@ class Header extends Component {
       dir = distance > 0;
     this.state.lastY = window.pageYOffset;
     
-    if(Math.abs(distance) > 10) {
+    // if(Math.abs(distance) > 10) {
       this.setState({
         dir,
       });
-    }
+    // }
     
     
   }
+    getScrollTop() {
+        let scrollPos;
+        if (window.pageYOffset) {
+            scrollPos = window.pageYOffset; }
+        else if (document.compatMode && document.compatMode !== 'BackCompat')
+        { scrollPos = document.documentElement.scrollTop; }
+        else if (document.body) { scrollPos = document.body.scrollTop; }
+        return scrollPos;
+    }
+    ableToChange(e) {
+      if(this.getScrollTop() < 0 || (this.getScrollTop() + document.body.clientHeight) > (document.body.scrollHeight)) {
+        return false;
+      } else {
+        return true;
+      }
+    }
 
-  onMouseWheel(event) {  
+    onMouseWheel(event) {
     if(!this.state.clickHeader) {
       this.findVisibleContent();
     }
-    
-    if(detectmob()) {
+    // todo: 检测值
+    // document.querySelector('.menu a').innerHTML = `${this.getScrollTop()}-${document.body.scrollHeight}-${document.body.clientHeight}`;
+    if(detectmob() && this.ableToChange()) {
       this.acc(event);
     }
   }
