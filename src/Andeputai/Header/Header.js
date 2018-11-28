@@ -99,7 +99,7 @@ class Header extends Component {
         return scrollPos;
     }
     ableToChange(e) {
-      if(this.getScrollTop() < 0 || (this.getScrollTop() + document.body.clientHeight) > (document.body.scrollHeight)) {
+      if(this.getScrollTop() < 0 || (this.getScrollTop() + document.body.clientHeight) > (document.body.scrollHeight - 25)) {
         return false;
       } else {
         return true;
@@ -111,7 +111,7 @@ class Header extends Component {
       this.findVisibleContent();
     }
     // todo: 检测值
-    // document.querySelector('.menu a').innerHTML = `${this.getScrollTop()}-${document.body.scrollHeight}-${document.body.clientHeight}`;
+    document.querySelector('.menu a').innerHTML = `${this.getScrollTop()}-${document.body.scrollHeight}-${document.body.clientHeight}`;
     if(detectmob() && this.ableToChange()) {
       this.acc(event);
     }
