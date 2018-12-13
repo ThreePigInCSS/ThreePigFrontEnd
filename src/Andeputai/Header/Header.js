@@ -149,7 +149,7 @@ class Header extends Component {
       <div className="pc-home">
           <div className="header_container">
               <div className="logo">
-                  <a href=".ant-carousel">
+                  <a href="">
                       <img src={logo} alt="img"/>
                   </a>
               </div>

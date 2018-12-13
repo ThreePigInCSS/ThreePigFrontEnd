@@ -135,6 +135,9 @@
         font-size: 0.8125rem;
         color: #464646;
         margin-bottom: 2.6875rem;
+        &.connect_abstract {
+          color: #0087CE;
+        }
       }
       .connect_btn {
         padding: 0.5rem 1rem;

@@ -99,7 +99,7 @@ export default class Footer extends PureComponent {
     render() {
         let company = "北京安德普泰医疗科技有限公司";
         let companyEng = "Beijing UnderProved medical technology co. LTD ";
-        let netInfo = "京网备";
+        let netInfo = "京ICP备 18032874 号";
         return (
             <div className="footer_container" id="cooperation">
                 <div className="footer_title">合作伙伴</div>
