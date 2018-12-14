@@ -40,7 +40,7 @@ class Bellows extends Component {
         hasDetail: ".communication.second-page",    // 用于二级页面
         text: [
           '安德普泰医疗科技定期参加中国医学交流活动，与众多知名专家开展学术研究并发表专业论文。与国际医学机构保持常态化沟通。',
-          'UnderProved medical technology regularly participates in Chinese medical exchange activities, conducts academic research with many well-known experts and publishes professional papers. Maintain regular communication with international medical institutions..'
+          'UnderProved medical technology regularly participates in Chinese medical exchange activities, conducts academic research with many well-known experts and publishes professional papers. Maintain regular communication with international medical institutions.'
         ],
         bgImgBig: bb01,
         mobText: 'Established in 2011 by the co-founder team of medical professional background, Beijing UnderProved medical technology co., LTD focuses on the research and development, management and market transformation of medical technology. I have been focusing on skin health for 7 years, and working together with a professional consulting team composed of authoritative experts in pharmacy.',
