@@ -37,7 +37,7 @@ export default class CarouselIndex extends PureComponent{
                                <div className="be_flex"><div className="connect_content connect_abstract" style={{ flex: beLeft ? '' : 'auto', marginLeft: beLeft ? left : 0 }}>中国装备协会皮肤病与皮肤美容专业委员会常务委员单位&nbsp;&nbsp;/&nbsp;&nbsp;北京中西医结合学会医学美容专业委员会企业委员单位</div></div>
                            </div>
                            <div>
-                               <div className="be_flex"><div className="connect_content" style={{ flex: beLeft ? '' : 'auto', marginLeft: beLeft ? left : 0 }}>北京安德普泰医疗科技有限公司由医学专业背景联合创始人团队建立于2011年，注重医学科技研发、管理及市场转化。</div></div>
+                               <div className="be_flex"><div className="connect_content" style={{ flex: beLeft ? '' : 'auto', marginLeft: beLeft ? left : 0 }}>北京安德普泰医疗科技有限公司由医学专业背景联合创始人团队建立于2010年，注重医学科技研发、管理及市场转化。</div></div>
                                <div className="be_flex"><div className="connect_content" style={{ flex: beLeft ? '' : 'auto', marginLeft: beLeft ? left : 0 }}>7年间专注于皮肤健康领域，联合包括药剂学，药理学，生物工程学，临床医学，中医学，植物学等多学科权威专家组成专业顾问团队，</div></div>
                                <div className="be_flex"><div className="connect_content" style={{ flex: beLeft ? '' : 'auto', marginLeft: beLeft ? left : 0 }}>共同致力于创造、改良适合广泛人群使用的医学技术。</div></div>
                            </div>
